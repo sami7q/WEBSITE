@@ -1,0 +1,45 @@
+/* =====================================================
+   Announcement Banner
+   ===================================================== */
+
+.announcement {
+    background: linear-gradient(120deg, rgba(79, 128, 255, 0.35), rgba(79, 128, 255, 0.05));
+    border-bottom: 1px solid rgba(79, 128, 255, 0.2);
+    font-size: 0.95rem;
+    color: var(--text-main);
+}
+
+.announcement__inner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    overflow: hidden;
+}
+
+.announcement__ticker {
+    flex: 1;
+    white-space: nowrap;
+    color: var(--text-subtle);
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.announcement__ticker.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.announcement__cta {
+    padding: 0.4rem 1.4rem;
+    border-radius: 999px;
+    background: rgba(13, 16, 22, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.announcement__cta:hover {
+    background: rgba(13, 16, 22, 0.55);
+    border-color: rgba(255, 255, 255, 0.32);
+}
