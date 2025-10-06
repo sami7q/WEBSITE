@@ -10,6 +10,16 @@
     text-align: center;
     margin-bottom: 2.2rem;
 }
+
+.metrics-section {
+    background: linear-gradient(160deg, rgba(79, 128, 255, 0.12), rgba(13, 16, 22, 0.85));
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.metrics-section .hero__stats {
+    justify-items: stretch;
+}
 .subscription-grid {
     display: grid;
     gap: 1.5rem;

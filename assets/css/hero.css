@@ -12,6 +12,46 @@
     align-items: center;
 }
 
+.hero__rating {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.6rem;
+    padding: 0.85rem 1.2rem;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 24px 42px -28px rgba(79, 128, 255, 0.4);
+}
+
+.hero__stars {
+    display: inline-flex;
+    gap: 0.4rem;
+    color: #f7b733;
+}
+
+.hero__star {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+.hero__rating-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.hero__rating-text strong {
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.hero__rating-text span {
+    font-size: 0.85rem;
+    color: var(--text-subtle);
+}
+
 .page-hero {
     padding: 3.5rem 0 3rem;
 }

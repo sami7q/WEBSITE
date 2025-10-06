@@ -115,6 +115,16 @@
         grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     }
 
+    .hero__rating {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.7rem;
+    }
+
+    .hero__rating-text {
+        align-items: flex-start;
+    }
+
     .section__feature {
         grid-template-columns: 1fr;
     }
@@ -182,6 +192,21 @@
     .hero__stats article {
         aspect-ratio: auto;
         padding: 1.6rem 1.4rem;
+    }
+
+    .hero__rating {
+        width: 100%;
+        align-items: center;
+    }
+
+    .hero__rating-text {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero__rating-text span {
+        font-size: 0.8rem;
     }
 
     .hero__stats article::after {

@@ -2,6 +2,8 @@
    Base Variables & Global Setup
    ===================================================== */
 
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700;800&display=swap");
+
 :root {
     color-scheme: dark;
     --bg: #0d1016;
