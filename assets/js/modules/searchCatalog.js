@@ -17,21 +17,21 @@ export const searchCatalog = [
         name: "Capcut Pro (شهرين)",
         category: "تصميم",
         url: "subscriptions.html#catalog",
-        keywords: "capcut pro شهرين مونتاج فيديو 22500",
+        keywords: "capcut pro شهرين مونتاج فيديو 27000",
         featured: false
     },
     {
         name: "Netflix (3 أشهر)",
         category: "اشتراكات رقمية",
         url: "subscriptions.html#catalog",
-        keywords: "netflix اشتراك 3 اشهر 29985 مسلسلات افلام",
+        keywords: "netflix اشتراك 3 اشهر 27000 مسلسلات افلام",
         featured: true
     },
     {
         name: "LinkedIn Premium (3 أشهر)",
         category: "أعمال",
         url: "subscriptions.html#catalog",
-        keywords: "linkedin premium 3 اشهر كورسات توظيف 50625",
+        keywords: "linkedin premium 3 اشهر كورسات توظيف 47000",
         featured: false
     },
     {

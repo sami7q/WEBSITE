@@ -7,6 +7,21 @@ const LANGUAGE_CONFIG = {
     en: { label: "English", code: "EN", dir: "ltr" }
 };
 
+const closeCurrencyWidgets = () => {
+    const widgets = document.querySelectorAll("[data-currency-widget]");
+    widgets.forEach((widget) => {
+        if (widget.dataset.open === "true") {
+            widget.dataset.open = "false";
+        }
+
+        const toggle = widget.querySelector(".currency-widget__toggle");
+        const panel = widget.querySelector(".currency-widget__panel");
+
+        toggle?.setAttribute("aria-expanded", "false");
+        panel?.setAttribute("hidden", "");
+    });
+};
+
 const storage = {
     get() {
         try {
@@ -91,6 +106,32 @@ export function initLanguageSwitcher({ selector = "[data-language-switcher]" } =
         return DEFAULT_LANGUAGE;
     };
 
+    const applyOptionDisplays = () => {
+        options.forEach((option) => {
+            const lang = option.dataset.languageOption;
+            const config = LANGUAGE_CONFIG[lang];
+            if (!config) {
+                return;
+            }
+
+            const labelSpan = option.querySelector(".language-switcher__option-label");
+            const codeSpan = option.querySelector(".language-switcher__option-code");
+
+            if (labelSpan) {
+                labelSpan.textContent = config.code;
+                labelSpan.lang = "en";
+                labelSpan.dir = "ltr";
+            }
+
+            if (codeSpan) {
+                codeSpan.textContent = "";
+                codeSpan.setAttribute("aria-hidden", "true");
+            }
+        });
+    };
+
+    applyOptionDisplays();
+
     let currentLanguage = resolveInitialLanguage();
 
     const syncOptions = (lang) => {
@@ -103,12 +144,12 @@ export function initLanguageSwitcher({ selector = "[data-language-switcher]" } =
 
     const updateUi = (lang) => {
         const config = LANGUAGE_CONFIG[lang] ?? LANGUAGE_CONFIG[DEFAULT_LANGUAGE];
-        labelEl.textContent = config.label;
-        labelEl.lang = lang;
-        labelEl.dir = config.dir;
+        labelEl.textContent = config.code;
+        labelEl.lang = "en";
+        labelEl.dir = "ltr";
         toggle.setAttribute("data-current-language", lang);
-        toggle.lang = lang;
-        toggle.dir = config.dir;
+        toggle.lang = "en";
+        toggle.dir = "ltr";
         toggle.setAttribute(
             "aria-label",
             `تغيير اللغة (${config.label})`
@@ -126,6 +167,7 @@ export function initLanguageSwitcher({ selector = "[data-language-switcher]" } =
     };
 
     const openPanel = () => {
+        closeCurrencyWidgets();
         switcher.dataset.open = "true";
         toggle.setAttribute("aria-expanded", "true");
         list.hidden = false;
@@ -176,6 +218,7 @@ export function initLanguageSwitcher({ selector = "[data-language-switcher]" } =
         if (["Enter", " ", "Spacebar", "ArrowDown", "ArrowUp"].includes(event.key)) {
             event.preventDefault();
             if (switcher.dataset.open !== "true") {
+                closeCurrencyWidgets();
                 openPanel();
             }
 

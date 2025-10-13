@@ -41,6 +41,23 @@ const dispatchCurrencyChange = (currency) => {
     );
 };
 
+const closeLanguageSwitchers = () => {
+    const switchers = document.querySelectorAll("[data-language-switcher]");
+    switchers.forEach((switcher) => {
+        if (switcher.dataset.open === "true") {
+            switcher.dataset.open = "false";
+        }
+
+        const toggle = switcher.querySelector(".language-switcher__toggle");
+        const list = switcher.querySelector(".language-switcher__list");
+
+        toggle?.setAttribute("aria-expanded", "false");
+        if (list) {
+            list.hidden = true;
+        }
+    });
+};
+
 export function initCurrencyWidget({
     widgetSelector = '[data-currency-widget]',
     toggleSelector = '.currency-widget__toggle',
@@ -104,6 +121,10 @@ export function initCurrencyWidget({
         toggle.addEventListener('click', (e) => {
             e.stopPropagation();
             const isOpen = widget.dataset.open === 'true';
+
+            if (!isOpen) {
+                closeLanguageSwitchers();
+            }
             
             // إغلاق جميع القوائم الأخرى
             widgets.forEach(w => {
