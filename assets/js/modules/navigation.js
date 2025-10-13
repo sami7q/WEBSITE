@@ -1,3 +1,6 @@
+import { DEFAULT_LANGUAGE, LANGUAGE_STORAGE_KEY, TRANSLATIONS } from "./i18n-data.js";
+import { getWhatsappUrl } from "./whatsappRouting.js";
+
 const PAGE_KEY_MAP = {
     "": "index",
     "index.html": "index",
@@ -8,6 +11,49 @@ const PAGE_KEY_MAP = {
 };
 
 const MOBILE_BREAKPOINT = 960;
+
+const ORDER_KEY = "header.cta.order";
+const ORDER_FALLBACK = "اطلب الآن";
+const STEPS_KEY = "header.cta.steps";
+const STEPS_FALLBACK = "ابدأ الآن";
+
+const safeGetStoredLanguage = () => {
+    try {
+        return window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
+    } catch (_error) {
+        return null;
+    }
+};
+
+const resolveLanguage = () => {
+    const datasetLang = document.documentElement?.dataset?.locale;
+    if (datasetLang) {
+        return datasetLang.toLowerCase();
+    }
+
+    const stored = safeGetStoredLanguage();
+    if (stored) {
+        return stored.toLowerCase();
+    }
+
+    const docLang = document.documentElement?.lang;
+    if (docLang) {
+        return docLang.toLowerCase();
+    }
+
+    return DEFAULT_LANGUAGE;
+};
+
+const translate = (lang, key, fallback) => {
+    if (lang !== DEFAULT_LANGUAGE) {
+        const dictionary = TRANSLATIONS[lang];
+        if (dictionary && Object.prototype.hasOwnProperty.call(dictionary, key)) {
+            return dictionary[key];
+        }
+    }
+
+    return fallback;
+};
 
 const resolvePageKey = (pathname) => {
     const file = pathname.split("/").pop() || "index.html";
@@ -38,18 +84,28 @@ export function initNavigation({
     });
 
     if (headerCta) {
-        const whatsappUrl = "https://wa.me/9647700000000";
+        const applyOrderText = (lang) => {
+            headerCta.textContent = translate(lang, ORDER_KEY, ORDER_FALLBACK);
+            headerCta.dataset.i18nKey = ORDER_KEY;
+        };
+
+        const applyStepsText = (lang) => {
+            headerCta.textContent = translate(lang, STEPS_KEY, STEPS_FALLBACK);
+            headerCta.dataset.i18nKey = STEPS_KEY;
+        };
 
         const setOrderState = () => {
-            headerCta.textContent = "اطلب الآن";
-            headerCta.href = whatsappUrl;
+            const lang = resolveLanguage();
+            applyOrderText(lang);
+            headerCta.href = getWhatsappUrl();
             headerCta.target = "_blank";
             headerCta.rel = "noopener";
             headerCta.dataset.ctaMode = "order";
         };
 
         const setStepsState = (targetHref) => {
-            headerCta.textContent = "ابدأ الآن";
+            const lang = resolveLanguage();
+            applyStepsText(lang);
             headerCta.href = targetHref;
             headerCta.removeAttribute("target");
             headerCta.removeAttribute("rel");
@@ -65,6 +121,21 @@ export function initNavigation({
         };
 
         applyInitialState();
+
+        document.addEventListener("pl:language-change", (event) => {
+            const lang = event.detail?.language?.toLowerCase() || resolveLanguage();
+            if (headerCta.dataset.ctaMode === "steps") {
+                applyStepsText(lang);
+            } else {
+                applyOrderText(lang);
+            }
+        });
+
+        document.addEventListener("pl:currency-change", () => {
+            if (headerCta.dataset.ctaMode === "order") {
+                headerCta.href = getWhatsappUrl();
+            }
+        });
 
         navLinks.forEach((link) => {
             link.addEventListener("click", () => {

@@ -1,3 +1,41 @@
+const LOADER_TEXTS = {
+    ar: "جارٍ تجهيز متجرك...",
+    tr: "Mağazanız hazırlanıyor...",
+    en: "Preparing your store..."
+};
+
+const safeGetLanguage = () => {
+    try {
+        return window.localStorage.getItem("preferred_language");
+    } catch (_error) {
+        return null;
+    }
+};
+
+const resolveLanguage = () => {
+    const datasetLang = document.documentElement?.dataset?.locale;
+    if (datasetLang) {
+        return datasetLang.toLowerCase();
+    }
+
+    const stored = safeGetLanguage();
+    if (stored) {
+        return stored.toLowerCase();
+    }
+
+    const docLang = document.documentElement?.lang;
+    if (docLang) {
+        return docLang.toLowerCase();
+    }
+
+    return "ar";
+};
+
+const getLoaderText = () => {
+    const lang = resolveLanguage();
+    return LOADER_TEXTS[lang] ?? LOADER_TEXTS.ar;
+};
+
 export function initPageLoader() {
     if (typeof document === "undefined") {
         return;
@@ -22,9 +60,14 @@ export function initPageLoader() {
             <div class="page-loader__progress" role="presentation">
                 <span class="page-loader__bar"></span>
             </div>
-            <span class="page-loader__text">جارٍ تجهيز متجرك...</span>
+            <span class="page-loader__text"></span>
         </div>
     `;
+
+    const loaderText = loader.querySelector(".page-loader__text");
+    if (loaderText) {
+        loaderText.textContent = getLoaderText();
+    }
 
     body.classList.add("is-loading");
     body.appendChild(loader);

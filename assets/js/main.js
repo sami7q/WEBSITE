@@ -6,6 +6,9 @@ import { initAnnouncementTicker } from "./modules/announcementTicker.js";
 import { initFlashTimer } from "./modules/flashTimer.js";
 import { initCounters } from "./modules/counters.js";
 import { initCurrencyWidget } from "./modules/currencyWidget.js";
+import { initI18n } from "./modules/i18n.js";
+import { initLanguageSwitcher, primeDocumentLanguage } from "./modules/languageSwitcher.js";
+import { initWhatsappRouting } from "./modules/whatsappRouting.js";
 import { searchCatalog } from "./modules/searchCatalog.js";
 
 const onDomReady = (callback) => {
@@ -16,9 +19,11 @@ const onDomReady = (callback) => {
     }
 };
 
+primeDocumentLanguage();
 initPageLoader();
 
 onDomReady(() => {
+    initI18n();
     initNavigation();
     initSearch({ catalog: searchCatalog });
     initSubscriptionDetails();
@@ -26,4 +31,6 @@ onDomReady(() => {
     initFlashTimer();
     initCounters();
     initCurrencyWidget();
+    initLanguageSwitcher();
+    initWhatsappRouting();
 });

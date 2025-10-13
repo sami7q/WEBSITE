@@ -1,3 +1,5 @@
+import { getWhatsappUrl } from "./whatsappRouting.js";
+
 const ARABIC_DIACRITICS = /[\u0610-\u061a\u064b-\u065f]/g;
 
 const normalize = (value) =>
@@ -20,15 +22,23 @@ const buildSearchText = (item) => {
     return item.__searchText;
 };
 
+const isWhatsappLink = (url) => /wa\.me\//i.test(url);
+
 const navigateTo = (item) => {
     if (!item) {
         return;
     }
 
-    if (isExternalLink(item.url)) {
-        window.open(item.url, "_blank", "noopener");
+    let targetUrl = item.url;
+
+    if (isWhatsappLink(targetUrl)) {
+        targetUrl = getWhatsappUrl();
+    }
+
+    if (isExternalLink(targetUrl)) {
+        window.open(targetUrl, "_blank", "noopener");
     } else {
-        window.location.href = item.url;
+        window.location.href = targetUrl;
     }
 };
 

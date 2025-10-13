@@ -1,11 +1,14 @@
-# Python / Node / IDE junk
-__pycache__/
-*.pyc
-.venv/
-env/
+# System / IDE
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Node / Python / Build
 node_modules/
 dist/
 build/
-.idea/
-.vscode/
-.DS_Store
+__pycache__/
+*.pyc
+.env
+.venv/

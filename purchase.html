@@ -28,68 +28,94 @@
     <link rel="stylesheet" href="assets/css/footer.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
 </head>
-<body>
-    <div class="announcement" role="region" aria-label="إرشادات الشراء">
+<body data-page="purchase">
+    <div class="announcement" role="region" aria-label="أحدث العروض" data-i18n-attrs="aria-label:announcement.regionLabel">
         <div class="container announcement__inner">
-            <span>خطوة بخطوة:</span>
-            <span class="announcement__ticker" data-phrases="اختر المنتج، تواصل معنا، استلم فورًا,الدفع متاح عبر المحافظ المحلية,دعم مباشر أثناء عملية التفعيل"></span>
-            <a href="#faq" class="announcement__cta">شاهد الأسئلة</a>
+            <span data-i18n-key="announcement.prefix">عرض اليوم:</span>
+            <span class="announcement__ticker" data-phrases="خصم 25% على البلايستيشن بلس,شحن فوري لبطاقات بوبجي,هدايا مجانية مع حسابات نتفلكس" data-i18n-attrs="data-phrases:announcement.ticker"></span>
+            <a href="offers.html" class="announcement__cta" data-i18n-key="announcement.cta">استفد الآن</a>
         </div>
     </div>
 
     <header class="site-header">
         <div class="container header__inner">
-            <a class="logo" href="index.html" aria-label="العودة إلى الصفحة الرئيسية">PLUS STORE</a>
-            <button class="menu-toggle" type="button" aria-label="فتح القائمة" aria-expanded="false">
+            <a class="logo" href="index.html" aria-label="العودة إلى الصفحة الرئيسية" data-i18n-attrs="aria-label:header.logo.ariaLabel">PLUS STORE</a>
+            <button class="menu-toggle" type="button" aria-label="فتح القائمة" aria-expanded="false" data-i18n-attrs="aria-label:header.menu.open">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <div class="site-nav__search">
                 <div class="search" role="search">
-                    <label class="search__label visually-hidden" for="site-search">بحث</label>
-                    <input class="search__input" type="search" id="site-search" name="search" placeholder="بحث..." autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-controls="search-suggestions" />
-                    <button class="search__clear" type="button" aria-label="مسح البحث"></button>
+                    <label class="search__label visually-hidden" for="site-search" data-i18n-key="header.search.label">بحث</label>
+                    <input class="search__input" type="search" id="site-search" name="search" placeholder="بحث..." autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-controls="search-suggestions" data-i18n-attrs="placeholder:header.search.placeholder" />
+                    <button class="search__clear" type="button" aria-label="مسح البحث" data-i18n-attrs="aria-label:header.search.clear"></button>
                     <ul class="search__suggestions" id="search-suggestions" role="listbox"></ul>
                 </div>
+            </div>
+            <div class="language-switcher" data-language-switcher>
+                <button class="language-switcher__toggle" type="button" aria-haspopup="listbox" aria-expanded="false">
+                    <span class="language-switcher__icon" aria-hidden="true">🌐</span>
+                    <span class="language-switcher__label" data-language-label>العربية</span>
+                </button>
+                <ul class="language-switcher__list" role="listbox" hidden>
+                    <li>
+                        <button class="language-switcher__option is-selected" type="button" role="option" data-language-option="ar" data-language-dir="rtl" aria-selected="true" lang="ar">
+                            <span class="language-switcher__option-label">العربية</span>
+                            <span class="language-switcher__option-code">AR</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="language-switcher__option" type="button" role="option" data-language-option="tr" data-language-dir="ltr" aria-selected="false" lang="tr">
+                            <span class="language-switcher__option-label">Türkçe</span>
+                            <span class="language-switcher__option-code">TR</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="language-switcher__option" type="button" role="option" data-language-option="en" data-language-dir="ltr" aria-selected="false" lang="en">
+                            <span class="language-switcher__option-label">English</span>
+                            <span class="language-switcher__option-code">EN</span>
+                        </button>
+                    </li>
+                </ul>
             </div>
             <div class="currency-widget" data-currency-widget>
                 <button class="currency-widget__toggle" type="button" aria-expanded="false">IQD</button>
                 <div class="currency-widget__panel" hidden>
-                    <span class="currency-widget__title">اختر العملة</span>
+                    <span class="currency-widget__title" data-i18n-key="currency.title">اختر العملة</span>
                     <ul>
                         <li>
                             <button class="currency-widget__option is-selected" type="button" data-currency-option="IQD">
-                                <span>IQD</span>
-                                <strong>د.ع</strong>
+                                <span data-i18n-key="currency.option.iqd">IQD</span>
+                                <strong data-i18n-key="currency.option.iqdSymbol">د.ع</strong>
                             </button>
                         </li>
                         <li>
                             <button class="currency-widget__option" type="button" data-currency-option="USD">
-                                <span>USD</span>
-                                <strong>$</strong>
+                                <span data-i18n-key="currency.option.usd">USD</span>
+                                <strong data-i18n-key="currency.option.usdSymbol">$</strong>
                             </button>
                         </li>
                         <li>
                             <button class="currency-widget__option" type="button" data-currency-option="TL">
-                                <span>TL</span>
-                                <strong>₺</strong>
+                                <span data-i18n-key="currency.option.tl">TL</span>
+                                <strong data-i18n-key="currency.option.tlSymbol">₺</strong>
                             </button>
                         </li>
                     </ul>
                 </div>
             </div>
-            <nav class="site-nav" aria-label="القائمة الرئيسية">
+            <nav class="site-nav" aria-label="القائمة الرئيسية" data-i18n-attrs="aria-label:header.nav.ariaLabel">
                 <ul>
-                    <li><a href="index.html" data-page="index">الرئيسية</a></li>
-                    <li><a href="subscriptions.html" data-page="subscriptions">الاشتراكات الرقمية</a></li>
-                    <li><a href="accounts.html" data-page="accounts">الحسابات الجاهزة</a></li>
-                    <li><a href="offers.html" data-page="offers">الاشتراكات الرياضية</a></li>
-                    <li><a href="purchase.html" data-page="purchase">طريقة الشراء</a></li>
+                    <li><a href="index.html" data-page="index" data-i18n-key="nav.home">الرئيسية</a></li>
+                    <li><a href="subscriptions.html" data-page="subscriptions" data-i18n-key="nav.subscriptions">الاشتراكات الرقمية</a></li>
+                    <li><a href="accounts.html" data-page="accounts" data-i18n-key="nav.accounts">الحسابات الجاهزة</a></li>
+                    <li><a href="offers.html" data-page="offers" data-i18n-key="nav.offers">الاشتراكات الرياضية</a></li>
+                    <li><a href="purchase.html" data-page="purchase" data-i18n-key="nav.purchase">طريقة الشراء</a></li>
                 </ul>
             </nav>
             <div class="header__cta">
-                <a class="cta" data-cta-primary href="https://wa.me/9647700000000" target="_blank" rel="noopener">اطلب الآن</a>
+                <a class="cta" data-cta-primary href="https://wa.me/9647700000000" target="_blank" rel="noopener" data-i18n-key="header.cta.order">اطلب الآن</a>
             </div>
         </div>
     </header>
@@ -98,16 +124,16 @@
         <section class="page-hero page-hero--purchase">
             <div class="container page-hero__inner">
                 <div>
-                    <nav class="breadcrumb" aria-label="مسار التنقل">
-                        <a href="index.html">الرئيسية</a>
+                    <nav class="breadcrumb" aria-label="مسار التنقل" data-i18n-attrs="aria-label:breadcrumbs.ariaLabel">
+                        <a href="index.html" data-i18n-key="nav.home">الرئيسية</a>
                         <span aria-hidden="true"> / </span>
-                        <span>طريقة الشراء</span>
+                        <span data-i18n-key="purchase.hero.breadcrumbCurrent">طريقة الشراء</span>
                     </nav>
-                    <h1>عملية شراء سلسة بثلاث خطوات</h1>
-                    <p>من اختيار المنتج وحتى التفعيل النهائي، يوفر لك فريق PLUS STORE متابعة فورية، خيارات دفع موثوقة، وضمان أمان ممتد.</p>
+                    <h1 data-i18n-key="purchase.hero.title">عملية شراء سلسة بثلاث خطوات</h1>
+                    <p data-i18n-key="purchase.hero.subtitle">من اختيار المنتج وحتى التفعيل النهائي، يوفر لك فريق PLUS STORE متابعة فورية، خيارات دفع موثوقة، وضمان أمان ممتد.</p>
                     <div class="hero__actions">
-                        <a class="cta" href="#steps">ابدأ الرحلة الآن</a>
-                        <a class="cta cta--ghost" href="#faq">تعرّف على الضمان</a>
+                        <a class="cta" href="#steps" data-i18n-key="purchase.hero.cta.primary">ابدأ الرحلة الآن</a>
+                        <a class="cta cta--ghost" href="#faq" data-i18n-key="purchase.hero.cta.secondary">تعرّف على الضمان</a>
                     </div>
                 </div>
                 <div class="page-hero__image" aria-hidden="true">
@@ -122,33 +148,33 @@
 
         <section class="section" id="steps">
             <div class="container section__header">
-                <h2>ثلاث خطوات فقط</h2>
-                <p>تواصل معنا عبر القنوات المتاحة وسنكون معك حتى تتم العملية بنجاح.</p>
+                <h2 data-i18n-key="purchase.steps.title">ثلاث خطوات فقط</h2>
+                <p data-i18n-key="purchase.steps.subtitle">تواصل معنا عبر القنوات المتاحة وسنكون معك حتى تتم العملية بنجاح.</p>
             </div>
             <div class="container steps-grid">
                 <article class="step-card">
                     <span class="step-number">1</span>
-                    <h3>اختر المنتج</h3>
-                    <p>تصفح صفحات المنتجات واختر العرض المناسب، ثم أرسل قيمة المنتج عبر ZainCash أو QiCard.</p>
-                    <span class="pill">حدد الفئة</span>
+                    <h3 data-i18n-key="purchase.steps.card1.title">اختر المنتج</h3>
+                    <p data-i18n-key="purchase.steps.card1.description">تصفح صفحات المنتجات واختر العرض المناسب، ثم أرسل قيمة المنتج عبر ZainCash أو QiCard.</p>
+                    <span class="pill" data-i18n-key="purchase.steps.card1.badge">حدد الفئة</span>
                 </article>
                 <article class="step-card">
                     <span class="step-number">2</span>
-                    <h3>تواصل معنا</h3>
-                    <p>تواصل معنا عبر واتساب، وأرسل اسم المنتج مع وصل الدفع للتأكيد.</p>
-                    <span class="pill">تأكيد الدفع</span>
+                    <h3 data-i18n-key="purchase.steps.card2.title">تواصل معنا</h3>
+                    <p data-i18n-key="purchase.steps.card2.description">تواصل معنا عبر واتساب، وأرسل اسم المنتج مع وصل الدفع للتأكيد.</p>
+                    <span class="pill" data-i18n-key="purchase.steps.card2.badge">تأكيد الدفع</span>
                 </article>
                 <article class="step-card">
                     <span class="step-number">3</span>
-                    <h3>تفعيل الخدمة</h3>
-                    <p>سيقوم فريقنا بتفعيل خدمتك عبر واتساب في أسرع وقت.</p>
-                    <span class="pill">تم التنفيذ</span>
+                    <h3 data-i18n-key="purchase.steps.card3.title">تفعيل الخدمة</h3>
+                    <p data-i18n-key="purchase.steps.card3.description">سيقوم فريقنا بتفعيل خدمتك عبر واتساب في أسرع وقت.</p>
+                    <span class="pill" data-i18n-key="purchase.steps.card3.badge">تم التنفيذ</span>
                 </article>
             </div>
-            <div class="container step-pointer" aria-label="انتقل إلى طرق الدفع">
+            <div class="container step-pointer" aria-label="انتقل إلى طرق الدفع" data-i18n-attrs="aria-label:purchase.steps.pointer.aria">
                 <a class="step-pointer__link" href="#payment">
-                    <span class="step-pointer__label">جاهز للدفع؟</span>
-                    <span class="step-pointer__text">تابع مباشرة إلى طرق الدفع المتاحة لدينا</span>
+                    <span class="step-pointer__label" data-i18n-key="purchase.steps.pointer.label">جاهز للدفع؟</span>
+                    <span class="step-pointer__text" data-i18n-key="purchase.steps.pointer.copy">تابع مباشرة إلى طرق الدفع المتاحة لدينا</span>
                     <span class="step-pointer__icon" aria-hidden="true">
                         <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                             <defs>
@@ -167,32 +193,32 @@
 
         <section class="section payment-section" id="payment">
             <div class="container section__header">
-                <h2>طرق الدفع المتاحة حاليًا</h2>
+                <h2 data-i18n-key="purchase.payment.title">طرق الدفع المتاحة حاليًا</h2>
             </div>
             <div class="container payment-grid">
                 <article class="payment-card">
                     <div class="payment-card__header">
                         <div class="payment-card__logo">
-                            <img src="assets/images/zaincash-logo.svg" alt="شعار محفظة ZainCash" loading="lazy" />
-                            <h3>ZainCash</h3>
+                            <img src="assets/images/zaincash-logo.svg" alt="شعار محفظة ZainCash" loading="lazy" data-i18n-attrs="alt:purchase.payment.card1.alt" />
+                            <h3 data-i18n-key="purchase.payment.card1.title">ZainCash</h3>
                         </div>
                         <div class="payment-card__qr">
-                            <img src="assets/images/qr-placeholder-zaincash.svg" alt="رمز QR افتراضي لتحويل ZainCash" loading="lazy" />
+                            <img src="assets/images/qr-placeholder-zaincash.svg" alt="رمز QR افتراضي لتحويل ZainCash" loading="lazy" data-i18n-attrs="alt:purchase.payment.card1.qrAlt" />
                         </div>
                     </div>
                     <div class="payment-card__body">
-                        <div class="payment-card__details">
+                        <div class="payment-card__details" data-i18n-key="purchase.payment.card1.details" data-i18n-html="true">
                             <span>اسم المحفظة: PLUS STORE</span>
                             <span>رقم المحفظة: 0770 000 0000</span>
                             <span>ملاحظة الدفع: اسم المنتج + منصة الاستخدام</span>
                         </div>
-                        <div class="payment-card__meta">
+                        <div class="payment-card__meta" data-i18n-key="purchase.payment.card1.meta" data-i18n-html="true">
                             <span>التأكيد: بعد إرسال الإيصال</span>
                             <span>الوقت المتوقع: أقل من 5 دقائق</span>
                         </div>
                         <div class="payment-card__actions">
-                            <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener">إرسال الإيصال</a>
-                            <a class="cta cta--ghost" href="#steps">العودة للخطوات</a>
+                            <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener" data-i18n-key="purchase.payment.card1.ctaPrimary">إرسال الإيصال</a>
+                            <a class="cta cta--ghost" href="#steps" data-i18n-key="purchase.payment.card1.ctaSecondary">العودة للخطوات</a>
                         </div>
                     </div>
                 </article>
@@ -200,26 +226,26 @@
                 <article class="payment-card">
                     <div class="payment-card__header">
                         <div class="payment-card__logo">
-                            <img src="assets/images/qicard-logo.svg" alt="شعار بطاقة QiCard" loading="lazy" />
-                            <h3>QiCard</h3>
+                            <img src="assets/images/qicard-logo.svg" alt="شعار بطاقة QiCard" loading="lazy" data-i18n-attrs="alt:purchase.payment.card2.alt" />
+                            <h3 data-i18n-key="purchase.payment.card2.title">QiCard</h3>
                         </div>
                         <div class="payment-card__qr">
-                            <img src="assets/images/qr-placeholder-qicard.svg" alt="رمز QR افتراضي لتحويل QiCard" loading="lazy" />
+                            <img src="assets/images/qr-placeholder-qicard.svg" alt="رمز QR افتراضي لتحويل QiCard" loading="lazy" data-i18n-attrs="alt:purchase.payment.card2.qrAlt" />
                         </div>
                     </div>
                     <div class="payment-card__body">
-                        <div class="payment-card__details">
+                        <div class="payment-card__details" data-i18n-key="purchase.payment.card2.details" data-i18n-html="true">
                             <span>اسم الحساب: PLUS STORE</span>
                             <span>رقم البطاقة: 5890 0000 0000 0000</span>
                             <span>تعليمات: شارك صورة الوصل بعد الإرسال</span>
                         </div>
-                        <div class="payment-card__meta">
+                        <div class="payment-card__meta" data-i18n-key="purchase.payment.card2.meta" data-i18n-html="true">
                             <span>الدعم: عبر واتساب على مدار الساعة</span>
                             <span>المعالجة: فورية</span>
                         </div>
                         <div class="payment-card__actions">
-                            <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener">تأكيد الدفع</a>
-                            <a class="cta cta--ghost" href="#faq">اطلع على الأسئلة</a>
+                            <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener" data-i18n-key="purchase.payment.card2.ctaPrimary">تأكيد الدفع</a>
+                            <a class="cta cta--ghost" href="#faq" data-i18n-key="purchase.payment.card2.ctaSecondary">اطلع على الأسئلة</a>
                         </div>
                     </div>
                 </article>
@@ -229,16 +255,16 @@
         <section class="section section--accent" id="faq">
             <div class="container info-grid">
                 <article class="info-card">
-                    <h3>هل يمكن استرجاع المبلغ؟</h3>
-                    <p>نعم، في حال عدم استلام المنتج خلال 30 دقيقة يتم رد المبلغ كاملًا أو توفير بديل مناسب.</p>
+                    <h3 data-i18n-key="purchase.faq.card1.title">هل يمكن استرجاع المبلغ؟</h3>
+                    <p data-i18n-key="purchase.faq.card1.body">نعم، في حال عدم استلام المنتج خلال 30 دقيقة يتم رد المبلغ كاملًا أو توفير بديل مناسب.</p>
                 </article>
                 <article class="info-card">
-                    <h3>ما هي أوقات العمل؟</h3>
-                    <p>نخدمك يوميًا من الساعة 10 صباحًا حتى 1 بعد منتصف الليل، مع دعم طوارئ للحالات العاجلة.</p>
+                    <h3 data-i18n-key="purchase.faq.card2.title">ما هي أوقات العمل؟</h3>
+                    <p data-i18n-key="purchase.faq.card2.body">نخدمك يوميًا من الساعة 10 صباحًا حتى 1 بعد منتصف الليل، مع دعم طوارئ للحالات العاجلة.</p>
                 </article>
                 <article class="info-card">
-                    <h3>كيف أتابع حالة طلبي؟</h3>
-                    <p>بعد كل طلب تصلك رسالة تتضمن رقم متابعة يمكنك استخدامه للتواصل مع فريق الدعم أو عبر لوحة العميل.</p>
+                    <h3 data-i18n-key="purchase.faq.card3.title">كيف أتابع حالة طلبي؟</h3>
+                    <p data-i18n-key="purchase.faq.card3.body">بعد كل طلب تصلك رسالة تتضمن رقم متابعة يمكنك استخدامه للتواصل مع فريق الدعم أو عبر لوحة العميل.</p>
                 </article>
             </div>
         </section>
@@ -246,12 +272,12 @@
         <section class="section">
             <div class="container guarantee">
                 <div>
-                    <h2>سياسة الأمان والضمان</h2>
-                    <p>كل عملية شراء تشمل ضمان استبدال أو استرجاع في حال وجود مشكلة خلال أول 72 ساعة. كما نقوم بحفظ كل المحادثات لضمان حقوق الطرفين.</p>
+                    <h2 data-i18n-key="purchase.guarantee.title">سياسة الأمان والضمان</h2>
+                    <p data-i18n-key="purchase.guarantee.body">كل عملية شراء تشمل ضمان استبدال أو استرجاع في حال وجود مشكلة خلال أول 72 ساعة. كما نقوم بحفظ كل المحادثات لضمان حقوق الطرفين.</p>
                 </div>
                 <div class="guarantee__cta">
-                    <a class="cta" href="https://t.me/plusstore" target="_blank" rel="noopener">ابدأ المحادثة</a>
-                    <span>متوسط وقت الرد: أقل من 5 دقائق</span>
+                    <a class="cta" href="https://t.me/plusstore" target="_blank" rel="noopener" data-i18n-key="purchase.guarantee.cta">ابدأ المحادثة</a>
+                    <span data-i18n-key="purchase.guarantee.note">متوسط وقت الرد: أقل من 5 دقائق</span>
                 </div>
             </div>
         </section>

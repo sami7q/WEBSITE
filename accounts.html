@@ -28,68 +28,94 @@
     <link rel="stylesheet" href="assets/css/footer.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
 </head>
-<body>
-    <div class="announcement" role="region" aria-label="تنبيهات الحسابات">
+<body data-page="accounts">
+    <div class="announcement" role="region" aria-label="أحدث العروض" data-i18n-attrs="aria-label:announcement.regionLabel">
         <div class="container announcement__inner">
-            <span>ضمان PLUS:</span>
-            <span class="announcement__ticker" data-phrases="ضمان استبدال لمدة 72 ساعة لكل حساب,تفعيل فوري للحسابات المميزة,حسابات مدفوعة مسبقًا مع دعم عربي"></span>
-            <a href="purchase.html" class="announcement__cta">اطلع على الضمان</a>
+            <span data-i18n-key="announcement.prefix">عرض اليوم:</span>
+            <span class="announcement__ticker" data-phrases="خصم 25% على البلايستيشن بلس,شحن فوري لبطاقات بوبجي,هدايا مجانية مع حسابات نتفلكس" data-i18n-attrs="data-phrases:announcement.ticker"></span>
+            <a href="offers.html" class="announcement__cta" data-i18n-key="announcement.cta">استفد الآن</a>
         </div>
     </div>
 
     <header class="site-header">
         <div class="container header__inner">
-            <a class="logo" href="index.html" aria-label="العودة إلى الصفحة الرئيسية">PLUS STORE</a>
-            <button class="menu-toggle" type="button" aria-label="فتح القائمة" aria-expanded="false">
+            <a class="logo" href="index.html" aria-label="العودة إلى الصفحة الرئيسية" data-i18n-attrs="aria-label:header.logo.ariaLabel">PLUS STORE</a>
+            <button class="menu-toggle" type="button" aria-label="فتح القائمة" aria-expanded="false" data-i18n-attrs="aria-label:header.menu.open">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <div class="site-nav__search">
                 <div class="search" role="search">
-                    <label class="search__label visually-hidden" for="site-search">بحث</label>
-                    <input class="search__input" type="search" id="site-search" name="search" placeholder="بحث..." autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-controls="search-suggestions" />
-                    <button class="search__clear" type="button" aria-label="مسح البحث"></button>
+                    <label class="search__label visually-hidden" for="site-search" data-i18n-key="header.search.label">بحث</label>
+                    <input class="search__input" type="search" id="site-search" name="search" placeholder="بحث..." autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-controls="search-suggestions" data-i18n-attrs="placeholder:header.search.placeholder" />
+                    <button class="search__clear" type="button" aria-label="مسح البحث" data-i18n-attrs="aria-label:header.search.clear"></button>
                     <ul class="search__suggestions" id="search-suggestions" role="listbox"></ul>
                 </div>
+            </div>
+            <div class="language-switcher" data-language-switcher>
+                <button class="language-switcher__toggle" type="button" aria-haspopup="listbox" aria-expanded="false">
+                    <span class="language-switcher__icon" aria-hidden="true">🌐</span>
+                    <span class="language-switcher__label" data-language-label>العربية</span>
+                </button>
+                <ul class="language-switcher__list" role="listbox" hidden>
+                    <li>
+                        <button class="language-switcher__option is-selected" type="button" role="option" data-language-option="ar" data-language-dir="rtl" aria-selected="true" lang="ar">
+                            <span class="language-switcher__option-label">العربية</span>
+                            <span class="language-switcher__option-code">AR</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="language-switcher__option" type="button" role="option" data-language-option="tr" data-language-dir="ltr" aria-selected="false" lang="tr">
+                            <span class="language-switcher__option-label">Türkçe</span>
+                            <span class="language-switcher__option-code">TR</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="language-switcher__option" type="button" role="option" data-language-option="en" data-language-dir="ltr" aria-selected="false" lang="en">
+                            <span class="language-switcher__option-label">English</span>
+                            <span class="language-switcher__option-code">EN</span>
+                        </button>
+                    </li>
+                </ul>
             </div>
             <div class="currency-widget" data-currency-widget>
                 <button class="currency-widget__toggle" type="button" aria-expanded="false">IQD</button>
                 <div class="currency-widget__panel" hidden>
-                    <span class="currency-widget__title">اختر العملة</span>
+                    <span class="currency-widget__title" data-i18n-key="currency.title">اختر العملة</span>
                     <ul>
                         <li>
                             <button class="currency-widget__option is-selected" type="button" data-currency-option="IQD">
-                                <span>IQD</span>
-                                <strong>د.ع</strong>
+                                <span data-i18n-key="currency.option.iqd">IQD</span>
+                                <strong data-i18n-key="currency.option.iqdSymbol">د.ع</strong>
                             </button>
                         </li>
                         <li>
                             <button class="currency-widget__option" type="button" data-currency-option="USD">
-                                <span>USD</span>
-                                <strong>$</strong>
+                                <span data-i18n-key="currency.option.usd">USD</span>
+                                <strong data-i18n-key="currency.option.usdSymbol">$</strong>
                             </button>
                         </li>
                         <li>
                             <button class="currency-widget__option" type="button" data-currency-option="TL">
-                                <span>TL</span>
-                                <strong>₺</strong>
+                                <span data-i18n-key="currency.option.tl">TL</span>
+                                <strong data-i18n-key="currency.option.tlSymbol">₺</strong>
                             </button>
                         </li>
                     </ul>
                 </div>
             </div>
-            <nav class="site-nav" aria-label="القائمة الرئيسية">
+            <nav class="site-nav" aria-label="القائمة الرئيسية" data-i18n-attrs="aria-label:header.nav.ariaLabel">
                 <ul>
-                    <li><a href="index.html" data-page="index">الرئيسية</a></li>
-                    <li><a href="subscriptions.html" data-page="subscriptions">الاشتراكات الرقمية</a></li>
-                    <li><a href="accounts.html" data-page="accounts">الحسابات الجاهزة</a></li>
-                    <li><a href="offers.html" data-page="offers">الاشتراكات الرياضية</a></li>
-                    <li><a href="purchase.html" data-page="purchase">طريقة الشراء</a></li>
+                    <li><a href="index.html" data-page="index" data-i18n-key="nav.home">الرئيسية</a></li>
+                    <li><a href="subscriptions.html" data-page="subscriptions" data-i18n-key="nav.subscriptions">الاشتراكات الرقمية</a></li>
+                    <li><a href="accounts.html" data-page="accounts" data-i18n-key="nav.accounts">الحسابات الجاهزة</a></li>
+                    <li><a href="offers.html" data-page="offers" data-i18n-key="nav.offers">الاشتراكات الرياضية</a></li>
+                    <li><a href="purchase.html" data-page="purchase" data-i18n-key="nav.purchase">طريقة الشراء</a></li>
                 </ul>
             </nav>
             <div class="header__cta">
-                <a class="cta" data-cta-primary href="https://wa.me/9647700000000" target="_blank" rel="noopener">اطلب الآن</a>
+                <a class="cta" data-cta-primary href="https://wa.me/9647700000000" target="_blank" rel="noopener" data-i18n-key="header.cta.order">اطلب الآن</a>
             </div>
         </div>
     </header>
@@ -98,16 +124,16 @@
         <section class="page-hero page-hero--accounts">
             <div class="container page-hero__inner">
                 <div>
-                    <nav class="breadcrumb" aria-label="مسار التنقل">
-                        <a href="index.html">الرئيسية</a>
+                    <nav class="breadcrumb" aria-label="مسار التنقل" data-i18n-attrs="aria-label:breadcrumbs.ariaLabel">
+                        <a href="index.html" data-i18n-key="nav.home">الرئيسية</a>
                         <span aria-hidden="true"> / </span>
-                        <span>الحسابات الجاهزة</span>
+                        <span data-i18n-key="accounts.hero.breadcrumbCurrent">الحسابات الجاهزة</span>
                     </nav>
-                    <h1>حسابات جاهزة تم فحصها مسبقًا</h1>
-                    <p>كل حساب يتم تسليمه مع دليل أمان مخصص وإرشادات لتغيير البيانات، بالإضافة إلى دعم مباشر واستبدال خلال 72 ساعة.</p>
+                    <h1 data-i18n-key="accounts.hero.title">حسابات جاهزة تم فحصها مسبقًا</h1>
+                    <p data-i18n-key="accounts.hero.subtitle">كل حساب يتم تسليمه مع دليل أمان مخصص وإرشادات لتغيير البيانات، بالإضافة إلى دعم مباشر واستبدال خلال 72 ساعة.</p>
                     <div class="hero__actions">
-                        <a class="cta" href="#catalog">ابدأ باختيار حسابك</a>
-                        <a class="cta cta--ghost" href="purchase.html#faq">اطلع على الضمان</a>
+                        <a class="cta" href="#catalog" data-i18n-key="accounts.hero.cta.primary">ابدأ باختيار حسابك</a>
+                        <a class="cta cta--ghost" href="purchase.html#faq" data-i18n-key="accounts.hero.cta.secondary">اطلع على الضمان</a>
                     </div>
                 </div>
                 <div class="page-hero__image" aria-hidden="true">
@@ -122,56 +148,56 @@
 
         <section class="section" id="catalog">
             <div class="container section__header">
-                <h2>خيارات تناسب استخدامك</h2>
-                <p>كل الحسابات محدثة ومرفقة بدليل أمان لضمان بقائها فعالة لأطول فترة.</p>
+                <h2 data-i18n-key="accounts.catalog.heading">خيارات تناسب استخدامك</h2>
+                <p data-i18n-key="accounts.catalog.subtitle">كل الحسابات محدثة ومرفقة بدليل أمان لضمان بقائها فعالة لأطول فترة.</p>
             </div>
             <div class="container product-grid product-grid--stretch">
                 <article class="product-card account-card" style="--card-accent:#4f80ff">
                     <div class="card-media">
-                        <img src="assets/images/PlayStation-5.svg" alt="شعار حساب بلايستيشن 5 حصري" loading="lazy" />
+                        <img src="assets/images/PlayStation-5.svg" alt="شعار حساب بلايستيشن 5 حصري" loading="lazy" data-i18n-attrs="alt:accounts.catalog.card1.alt" />
                     </div>
-                    <span class="pill">بلايستيشن 5</span>
-                    <h3>حساب ألعاب حصري</h3>
-                    <p>أحدث الألعاب الحصرية متاحة للتنزيل مع إمكانية اللعب عبر الإنترنت.</p>
+                    <span class="pill" data-i18n-key="accounts.catalog.card1.category">بلايستيشن 5</span>
+                    <h3 data-i18n-key="accounts.catalog.card1.title">حساب ألعاب حصري</h3>
+                    <p data-i18n-key="accounts.catalog.card1.description">أحدث الألعاب الحصرية متاحة للتنزيل مع إمكانية اللعب عبر الإنترنت.</p>
                     <ul class="feature-list">
-                        <li>تفعيل على جهاز واحد</li>
-                        <li>يدعم اللغة العربية بالكامل</li>
-                        <li>ضمان استرجاع خلال 48 ساعة</li>
+                        <li data-i18n-key="accounts.catalog.card1.feature1">تفعيل على جهاز واحد</li>
+                        <li data-i18n-key="accounts.catalog.card1.feature2">يدعم اللغة العربية بالكامل</li>
+                        <li data-i18n-key="accounts.catalog.card1.feature3">ضمان استرجاع خلال 48 ساعة</li>
                     </ul>
                     <span class="price" data-price-iqd="80000"><span data-price-amount>80,000</span> <span data-price-unit>د.ع</span></span>
-                    <a class="link" href="purchase.html">طريقة التسليم</a>
+                    <a class="link" href="purchase.html" data-i18n-key="accounts.catalog.deliveryLink">طريقة التسليم</a>
                 </article>
 
                 <article class="product-card account-card" style="--card-accent:#e50914">
                     <div class="card-media">
-                        <img src="assets/images/netflix.png" alt="شعار حساب Netflix 4K" loading="lazy" />
+                        <img src="assets/images/netflix.png" alt="شعار حساب Netflix 4K" loading="lazy" data-i18n-attrs="alt:accounts.catalog.card2.alt" />
                     </div>
-                    <span class="pill">Netflix 4K</span>
-                    <h3>حساب مشترك مخصص</h3>
-                    <p>استمتع بمكتبة ضخمة من الأفلام والمسلسلات دون توقف أو إعلانات.</p>
+                    <span class="pill" data-i18n-key="accounts.catalog.card2.category">Netflix 4K</span>
+                    <h3 data-i18n-key="accounts.catalog.card2.title">حساب مشترك مخصص</h3>
+                    <p data-i18n-key="accounts.catalog.card2.description">استمتع بمكتبة ضخمة من الأفلام والمسلسلات دون توقف أو إعلانات.</p>
                     <ul class="feature-list">
-                        <li>تغيير البريد وكلمة المرور</li>
-                        <li>دعم أجهزة التلفاز الذكية</li>
-                        <li>تجديد مجاني في حال توقف الخدمة</li>
+                        <li data-i18n-key="accounts.catalog.card2.feature1">تغيير البريد وكلمة المرور</li>
+                        <li data-i18n-key="accounts.catalog.card2.feature2">دعم أجهزة التلفاز الذكية</li>
+                        <li data-i18n-key="accounts.catalog.card2.feature3">تجديد مجاني في حال توقف الخدمة</li>
                     </ul>
                     <span class="price" data-price-iqd="60000"><span data-price-amount>60,000</span> <span data-price-unit>د.ع</span></span>
-                    <a class="link" href="purchase.html">طريقة التسليم</a>
+                    <a class="link" href="purchase.html" data-i18n-key="accounts.catalog.deliveryLink">طريقة التسليم</a>
                 </article>
 
                 <article class="product-card account-card" style="--card-accent:#1fab5f">
                     <div class="card-media">
-                        <img src="assets/images/Xbox-Game-Pass.svg" alt="شعار حساب Xbox Game Pass" loading="lazy" />
+                        <img src="assets/images/Xbox-Game-Pass.svg" alt="شعار حساب Xbox Game Pass" loading="lazy" data-i18n-attrs="alt:accounts.catalog.card3.alt" />
                     </div>
-                    <span class="pill">Xbox Game Pass</span>
-                    <h3>حساب ألتيميت لمدة 3 أشهر</h3>
-                    <p>أكثر من 400 لعبة جاهزة للتحميل مع اللعب السحابي لجميع الأجهزة.</p>
+                    <span class="pill" data-i18n-key="accounts.catalog.card3.category">Xbox Game Pass</span>
+                    <h3 data-i18n-key="accounts.catalog.card3.title">حساب ألتيميت لمدة 3 أشهر</h3>
+                    <p data-i18n-key="accounts.catalog.card3.description">أكثر من 400 لعبة جاهزة للتحميل مع اللعب السحابي لجميع الأجهزة.</p>
                     <ul class="feature-list">
-                        <li>يدعم الأجهزة المحمولة والكمبيوتر</li>
-                        <li>إمكانية الترقية للمدة السنوية</li>
-                        <li>إرشادات أمان مرفقة</li>
+                        <li data-i18n-key="accounts.catalog.card3.feature1">يدعم الأجهزة المحمولة والكمبيوتر</li>
+                        <li data-i18n-key="accounts.catalog.card3.feature2">إمكانية الترقية للمدة السنوية</li>
+                        <li data-i18n-key="accounts.catalog.card3.feature3">إرشادات أمان مرفقة</li>
                     </ul>
                     <span class="price" data-price-iqd="95000"><span data-price-amount>95,000</span> <span data-price-unit>د.ع</span></span>
-                    <a class="link" href="purchase.html">طريقة التسليم</a>
+                    <a class="link" href="purchase.html" data-i18n-key="accounts.catalog.deliveryLink">طريقة التسليم</a>
                 </article>
             </div>
         </section>
@@ -179,51 +205,51 @@
         <section class="section section--accent">
             <div class="container guard-grid">
                 <article>
-                    <h3>كيف نضمن أمان الحساب؟</h3>
-                    <p>نضبط كل حساب قبل التسليم ونتأكد من إزالة بيانات المالك السابق، ثم نرسل لك خطوات تغيير البريد وكلمة المرور.</p>
+                    <h3 data-i18n-key="accounts.guard.title">كيف نضمن أمان الحساب؟</h3>
+                    <p data-i18n-key="accounts.guard.description">نضبط كل حساب قبل التسليم ونتأكد من إزالة بيانات المالك السابق، ثم نرسل لك خطوات تغيير البريد وكلمة المرور.</p>
                     <ul class="feature-list">
-                        <li>فحص تاريخ الشراء والأجهزة المرتبطة</li>
-                        <li>تحقق ثنائي إذا كان متاحًا</li>
-                        <li>تواصل مباشر مع فريق الدعم</li>
+                        <li data-i18n-key="accounts.guard.feature1">فحص تاريخ الشراء والأجهزة المرتبطة</li>
+                        <li data-i18n-key="accounts.guard.feature2">تحقق ثنائي إذا كان متاحًا</li>
+                        <li data-i18n-key="accounts.guard.feature3">تواصل مباشر مع فريق الدعم</li>
                     </ul>
                 </article>
                 <article class="badge-card">
-                    <h4>شهادة PLUS للأمان</h4>
-                    <p>كل حساب يحمل علامة التحقق من PLUS، ما يعني أنه خضع للتدقيق التقني ويمنحك ضمانًا لمدة 72 ساعة قابلة للتمديد.</p>
-                    <span class="badge">ضمان 72 ساعة</span>
+                    <h4 data-i18n-key="accounts.guard.badge.title">شهادة PLUS للأمان</h4>
+                    <p data-i18n-key="accounts.guard.badge.description">كل حساب يحمل علامة التحقق من PLUS، ما يعني أنه خضع للتدقيق التقني ويمنحك ضمانًا لمدة 72 ساعة قابلة للتمديد.</p>
+                    <span class="badge" data-i18n-key="accounts.guard.badge.label">ضمان 72 ساعة</span>
                 </article>
             </div>
         </section>
 
         <section class="section payment-section" id="payment">
             <div class="container section__header">
-                <h2>طرق الدفع للحسابات الجاهزة</h2>
-                <p>تفاصيل الدفع مبدئية ومخصصة للتجربة، وسيتم تحديثها حين إطلاق القنوات الرسمية.</p>
+                <h2 data-i18n-key="accounts.payment.title">طرق الدفع للحسابات الجاهزة</h2>
+                <p data-i18n-key="accounts.payment.subtitle">تفاصيل الدفع مبدئية ومخصصة للتجربة، وسيتم تحديثها حين إطلاق القنوات الرسمية.</p>
             </div>
             <div class="container payment-grid">
                 <article class="payment-card">
                     <div class="payment-card__header">
                         <div class="payment-card__logo">
-                            <img src="assets/images/zaincash-logo.svg" alt="شعار محفظة ZainCash" loading="lazy" />
-                            <h3>ZainCash</h3>
+                            <img src="assets/images/zaincash-logo.svg" alt="شعار محفظة ZainCash" loading="lazy" data-i18n-attrs="alt:accounts.payment.card1.alt" />
+                            <h3 data-i18n-key="accounts.payment.card1.title">ZainCash</h3>
                         </div>
                         <div class="payment-card__qr">
-                            <img src="assets/images/qr-placeholder-zaincash.svg" alt="رمز QR افتراضي لتحويل ZainCash" loading="lazy" />
+                            <img src="assets/images/qr-placeholder-zaincash.svg" alt="رمز QR افتراضي لتحويل ZainCash" loading="lazy" data-i18n-attrs="alt:accounts.payment.card1.qrAlt" />
                         </div>
                     </div>
                     <div class="payment-card__body">
-                        <div class="payment-card__details">
+                        <div class="payment-card__details" data-i18n-key="accounts.payment.card1.details" data-i18n-html="true">
                             <span>اسم المحفظة: PLUS STORE</span>
                             <span>رقم المحفظة: 0770 000 0000</span>
                             <span>الملاحظة: نوع الحساب + منصة الاستخدام</span>
                         </div>
-                        <div class="payment-card__meta">
+                        <div class="payment-card__meta" data-i18n-key="accounts.payment.card1.meta" data-i18n-html="true">
                             <span>رسوم التحويل: 0%</span>
                             <span>التفعيل: فوري</span>
                         </div>
                         <div class="payment-card__actions">
-                            <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener">إرسال وصل الدفع</a>
-                            <a class="cta cta--ghost" href="purchase.html#steps">تعليمات الدفع</a>
+                            <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener" data-i18n-key="accounts.payment.card1.ctaPrimary">إرسال وصل الدفع</a>
+                            <a class="cta cta--ghost" href="purchase.html#steps" data-i18n-key="accounts.payment.card1.ctaSecondary">تعليمات الدفع</a>
                         </div>
                     </div>
                 </article>
@@ -231,26 +257,26 @@
                 <article class="payment-card">
                     <div class="payment-card__header">
                         <div class="payment-card__logo">
-                            <img src="assets/images/qicard-logo.svg" alt="شعار بطاقة QiCard" loading="lazy" />
-                            <h3>QiCard</h3>
+                            <img src="assets/images/qicard-logo.svg" alt="شعار بطاقة QiCard" loading="lazy" data-i18n-attrs="alt:accounts.payment.card2.alt" />
+                            <h3 data-i18n-key="accounts.payment.card2.title">QiCard</h3>
                         </div>
                         <div class="payment-card__qr">
-                            <img src="assets/images/qr-placeholder-qicard.svg" alt="رمز QR افتراضي لتحويل QiCard" loading="lazy" />
+                            <img src="assets/images/qr-placeholder-qicard.svg" alt="رمز QR افتراضي لتحويل QiCard" loading="lazy" data-i18n-attrs="alt:accounts.payment.card2.qrAlt" />
                         </div>
                     </div>
                     <div class="payment-card__body">
-                        <div class="payment-card__details">
+                        <div class="payment-card__details" data-i18n-key="accounts.payment.card2.details" data-i18n-html="true">
                             <span>اسم الحساب: PLUS STORE</span>
                             <span>رقم البطاقة: 5890 0000 0000 0000</span>
                             <span>تعليمات: أرسل صورة الإيصال بعد التحويل</span>
                         </div>
-                        <div class="payment-card__meta">
+                        <div class="payment-card__meta" data-i18n-key="accounts.payment.card2.meta" data-i18n-html="true">
                             <span>ساعات العمل: 10 ص - 1 ص</span>
                             <span>المعالجة: خلال 5 دقائق</span>
                         </div>
                         <div class="payment-card__actions">
-                            <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener">تأكيد التحويل</a>
-                            <a class="cta cta--ghost" href="purchase.html#faq">الأسئلة الشائعة</a>
+                            <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener" data-i18n-key="accounts.payment.card2.ctaPrimary">تأكيد التحويل</a>
+                            <a class="cta cta--ghost" href="purchase.html#faq" data-i18n-key="accounts.payment.card2.ctaSecondary">الأسئلة الشائعة</a>
                         </div>
                     </div>
                 </article>
@@ -262,26 +288,26 @@
         <div class="container footer__inner">
             <div>
                 <h4>PLUS STORE</h4>
-                <p>نبني الثقة مع كل عملية شراء ونوفّر أفضل التجارب الرقمية.</p>
+                <p data-i18n-key="footer.about">نبني الثقة مع كل عملية شراء ونوفّر أفضل التجارب الرقمية.</p>
             </div>
             <div>
-                <h5>تواصل معنا</h5>
+                <h5 data-i18n-key="footer.contact.title">تواصل معنا</h5>
                 <ul>
                     <li><a href="mailto:support@plusstore.iq">support@plusstore.iq</a></li>
                     <li><a href="tel:+9647700000000">+964 770 000 0000</a></li>
-                    <li><a href="https://t.me/plusstore" target="_blank" rel="noopener">تليجرام</a></li>
+                    <li><a href="https://t.me/plusstore" target="_blank" rel="noopener" data-i18n-key="footer.contact.telegram">تليجرام</a></li>
                 </ul>
             </div>
             <div>
-                <h5>روابط سريعة</h5>
+                <h5 data-i18n-key="footer.links.title">روابط سريعة</h5>
                 <ul>
-                    <li><a href="subscriptions.html">الاشتراكات</a></li>
-                    <li><a href="accounts.html">الحسابات</a></li>
-                    <li><a href="offers.html">العروض</a></li>
+                    <li><a href="subscriptions.html" data-i18n-key="footer.links.subscriptions">الاشتراكات</a></li>
+                    <li><a href="accounts.html" data-i18n-key="footer.links.accounts">الحسابات</a></li>
+                    <li><a href="offers.html" data-i18n-key="footer.links.offers">العروض</a></li>
                 </ul>
             </div>
         </div>
-        <p class="footer__copy">© 2025 PLUS STORE. جميع الحقوق محفوظة.</p>
+        <p class="footer__copy" data-i18n-key="footer.copy">© 2025 PLUS STORE. جميع الحقوق محفوظة.</p>
     </footer>
 
     <script type="module" src="assets/js/main.js"></script>

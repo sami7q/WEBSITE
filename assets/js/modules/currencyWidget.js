@@ -33,6 +33,14 @@ const setStoredCurrency = (currency) => {
     localStorage.setItem(STORAGE_KEY, currency);
 };
 
+const dispatchCurrencyChange = (currency) => {
+    document.dispatchEvent(
+        new CustomEvent("pl:currency-change", {
+            detail: { currency }
+        })
+    );
+};
+
 export function initCurrencyWidget({
     widgetSelector = '[data-currency-widget]',
     toggleSelector = '.currency-widget__toggle',
@@ -152,6 +160,9 @@ export function initCurrencyWidget({
                 
                 // تحديث الأسعار
                 updateAllPrices(selectedCurrency);
+
+                // إعلام باقي الواجهات
+                dispatchCurrencyChange(selectedCurrency);
             });
         });
     });
@@ -169,4 +180,5 @@ export function initCurrencyWidget({
 
     // تحديث الأسعار عند التحميل
     updateAllPrices(currentCurrency);
+    dispatchCurrencyChange(currentCurrency);
 }

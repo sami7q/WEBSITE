@@ -49,68 +49,94 @@
     <link rel="stylesheet" href="assets/css/footer.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
 </head>
-<body>
-    <div class="announcement" role="region" aria-label="أحدث العروض">
+<body data-page="index">
+    <div class="announcement" role="region" aria-label="أحدث العروض" data-i18n-attrs="aria-label:announcement.regionLabel">
         <div class="container announcement__inner">
-            <span>عرض اليوم:</span>
-            <span class="announcement__ticker" data-phrases="خصم 25% على البلايستيشن بلس,شحن فوري لبطاقات بوبجي,هدايا مجانية مع حسابات نتفلكس"></span>
-            <a href="offers.html" class="announcement__cta">استفد الآن</a>
+            <span data-i18n-key="announcement.prefix">عرض اليوم:</span>
+            <span class="announcement__ticker" data-phrases="خصم 25% على البلايستيشن بلس,شحن فوري لبطاقات بوبجي,هدايا مجانية مع حسابات نتفلكس" data-i18n-attrs="data-phrases:announcement.ticker"></span>
+            <a href="offers.html" class="announcement__cta" data-i18n-key="announcement.cta">استفد الآن</a>
         </div>
     </div>
 
     <header class="site-header">
         <div class="container header__inner">
-            <a class="logo" href="index.html" aria-label="العودة إلى الصفحة الرئيسية">PLUS STORE</a>
-            <button class="menu-toggle" type="button" aria-label="فتح القائمة" aria-expanded="false">
+            <a class="logo" href="index.html" aria-label="العودة إلى الصفحة الرئيسية" data-i18n-attrs="aria-label:header.logo.ariaLabel">PLUS STORE</a>
+            <button class="menu-toggle" type="button" aria-label="فتح القائمة" aria-expanded="false" data-i18n-attrs="aria-label:header.menu.open">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <div class="site-nav__search">
                 <div class="search" role="search">
-                    <label class="search__label visually-hidden" for="site-search">بحث</label>
-                    <input class="search__input" type="search" id="site-search" name="search" placeholder="بحث..." autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-controls="search-suggestions" />
-                    <button class="search__clear" type="button" aria-label="مسح البحث"></button>
+                    <label class="search__label visually-hidden" for="site-search" data-i18n-key="header.search.label">بحث</label>
+                    <input class="search__input" type="search" id="site-search" name="search" placeholder="بحث..." autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-controls="search-suggestions" data-i18n-attrs="placeholder:header.search.placeholder" />
+                    <button class="search__clear" type="button" aria-label="مسح البحث" data-i18n-attrs="aria-label:header.search.clear"></button>
                     <ul class="search__suggestions" id="search-suggestions" role="listbox"></ul>
                 </div>
+            </div>
+            <div class="language-switcher" data-language-switcher>
+                <button class="language-switcher__toggle" type="button" aria-haspopup="listbox" aria-expanded="false">
+                    <span class="language-switcher__icon" aria-hidden="true">🌐</span>
+                    <span class="language-switcher__label" data-language-label>العربية</span>
+                </button>
+                <ul class="language-switcher__list" role="listbox" hidden>
+                    <li>
+                        <button class="language-switcher__option is-selected" type="button" role="option" data-language-option="ar" data-language-dir="rtl" aria-selected="true" lang="ar">
+                            <span class="language-switcher__option-label">العربية</span>
+                            <span class="language-switcher__option-code">AR</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="language-switcher__option" type="button" role="option" data-language-option="tr" data-language-dir="ltr" aria-selected="false" lang="tr">
+                            <span class="language-switcher__option-label">Türkçe</span>
+                            <span class="language-switcher__option-code">TR</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="language-switcher__option" type="button" role="option" data-language-option="en" data-language-dir="ltr" aria-selected="false" lang="en">
+                            <span class="language-switcher__option-label">English</span>
+                            <span class="language-switcher__option-code">EN</span>
+                        </button>
+                    </li>
+                </ul>
             </div>
             <div class="currency-widget" data-currency-widget>
                 <button class="currency-widget__toggle" type="button" aria-expanded="false">IQD</button>
                 <div class="currency-widget__panel" hidden>
-                    <span class="currency-widget__title">اختر العملة</span>
+                    <span class="currency-widget__title" data-i18n-key="currency.title">اختر العملة</span>
                     <ul>
                         <li>
                             <button class="currency-widget__option is-selected" type="button" data-currency-option="IQD">
-                                <span>IQD</span>
-                                <strong>د.ع</strong>
+                                <span data-i18n-key="currency.option.iqd">IQD</span>
+                                <strong data-i18n-key="currency.option.iqdSymbol">د.ع</strong>
                             </button>
                         </li>
                         <li>
                             <button class="currency-widget__option" type="button" data-currency-option="USD">
-                                <span>USD</span>
-                                <strong>$</strong>
+                                <span data-i18n-key="currency.option.usd">USD</span>
+                                <strong data-i18n-key="currency.option.usdSymbol">$</strong>
                             </button>
                         </li>
                         <li>
                             <button class="currency-widget__option" type="button" data-currency-option="TL">
-                                <span>TL</span>
-                                <strong>₺</strong>
+                                <span data-i18n-key="currency.option.tl">TL</span>
+                                <strong data-i18n-key="currency.option.tlSymbol">₺</strong>
                             </button>
                         </li>
                     </ul>
                 </div>
             </div>
-            <nav class="site-nav" aria-label="القائمة الرئيسية">
+            <nav class="site-nav" aria-label="القائمة الرئيسية" data-i18n-attrs="aria-label:header.nav.ariaLabel">
                 <ul>
-                    <li><a href="index.html" data-page="index">الرئيسية</a></li>
-                    <li><a href="subscriptions.html" data-page="subscriptions">الاشتراكات الرقمية</a></li>
-                    <li><a href="accounts.html" data-page="accounts">الحسابات الجاهزة</a></li>
-                    <li><a href="offers.html" data-page="offers">الاشتراكات الرياضية</a></li>
-                    <li><a href="purchase.html" data-page="purchase">طريقة الشراء</a></li>
+                    <li><a href="index.html" data-page="index" data-i18n-key="nav.home">الرئيسية</a></li>
+                    <li><a href="subscriptions.html" data-page="subscriptions" data-i18n-key="nav.subscriptions">الاشتراكات الرقمية</a></li>
+                    <li><a href="accounts.html" data-page="accounts" data-i18n-key="nav.accounts">الحسابات الجاهزة</a></li>
+                    <li><a href="offers.html" data-page="offers" data-i18n-key="nav.offers">الاشتراكات الرياضية</a></li>
+                    <li><a href="purchase.html" data-page="purchase" data-i18n-key="nav.purchase">طريقة الشراء</a></li>
                 </ul>
             </nav>
             <div class="header__cta">
-                <a class="cta" data-cta-primary href="https://wa.me/9647700000000" target="_blank" rel="noopener">اطلب الآن</a>
+                <a class="cta" data-cta-primary href="https://wa.me/9647700000000" target="_blank" rel="noopener" data-i18n-key="header.cta.order">اطلب الآن</a>
             </div>
         </div>
     </header>
@@ -119,9 +145,9 @@
         <section class="hero">
             <div class="container hero__inner">
                 <div>
-                    <h1> PLUS STORE </h1>
-                    <p>وجهتك الشاملة لكل ما يتعلق بالاشتراكات الرقمية، الحسابات الجاهزة، وشحن الألعاب بأفضل الأسعار وبخدمة موثوقة.</p>
-                    <div class="hero__rating" aria-label="تقييم العملاء 4.9 من 5">
+                    <h1 data-i18n-key="index.hero.title">PLUS STORE</h1>
+                    <p data-i18n-key="index.hero.subtitle">وجهتك الشاملة لكل ما يتعلق بالاشتراكات الرقمية، الحسابات الجاهزة، وشحن الألعاب بأفضل الأسعار وبخدمة موثوقة.</p>
+                    <div class="hero__rating" aria-label="تقييم العملاء 4.9 من 5" data-i18n-attrs="aria-label:index.hero.rating.aria">
                         <div class="hero__stars" aria-hidden="true">
                             <svg class="hero__star" viewBox="0 0 24 24" role="presentation">
                                 <path d="M12 3.5l2.47 5 5.53.8-4 3.9.95 5.5L12 16.8l-4.95 2.9.95-5.5-4-3.9 5.53-.8z" fill="currentColor" />
@@ -148,14 +174,14 @@
                             </svg>
                         </div>
                         <div class="hero__rating-text">
-                            <strong>تقييم 4.9/5</strong>
-                            <span>بناءً على 1,834 طلبًا ناجحًا خلال 2025</span>
+                            <strong data-i18n-key="index.hero.rating.score">تقييم 4.9/5</strong>
+                            <span data-i18n-key="index.hero.rating.caption">بناءً على 1,834 طلبًا ناجحًا خلال 2025</span>
                         </div>
                     </div>
                     <div class="hero__actions">
-                        <a class="cta" href="subscriptions.html">اكتشف الاشتراكات</a>
-                        <a class="cta cta--ghost" href="offers.html">تابع التخفيضات</a>
-                        <a class="cta cta--whatsapp" href="https://wa.me/9647700000000" target="_blank" rel="noopener">
+                        <a class="cta" href="subscriptions.html" data-i18n-key="index.hero.cta.subscriptions">اكتشف الاشتراكات</a>
+                        <a class="cta cta--ghost" href="offers.html" data-i18n-key="index.hero.cta.offers">تابع التخفيضات</a>
+                        <a class="cta cta--whatsapp" href="https://wa.me/9647700000000" target="_blank" rel="noopener" data-i18n-key="index.hero.cta.whatsapp" data-i18n-html="true">
                             <span aria-hidden="true">✦</span>
                             اطلب عبر واتساب
                         </a>
@@ -166,19 +192,19 @@
 
         <section class="section bestseller-section" id="bestsellers">
             <div class="container section__header">
-                <h2>الأكثر مبيعًا</h2>
-                <p>عروض مختارة بعناية على الأدوات التعليمية ومنتجات الذكاء الاصطناعي مع تخفيضات كبيرة واستلام فوري.</p>
+                <h2 data-i18n-key="index.bestsellers.title">الأكثر مبيعًا</h2>
+                <p data-i18n-key="index.bestsellers.subtitle">عروض مختارة بعناية على الأدوات التعليمية ومنتجات الذكاء الاصطناعي مع تخفيضات كبيرة واستلام فوري.</p>
             </div>
             <div class="container bestseller-grid">
                 <article class="bestseller-card" style="--card-accent:#10a37f; --media-gradient-overlay:linear-gradient(140deg, rgba(6, 14, 27, 0.82), rgba(16, 79, 125, 0.55)); --media-gradient-base:linear-gradient(140deg, #061421, #0f2f54 58%, #18aea7)">
                     <div class="card-media">
-                        <img src="assets/images/OpenAI-Chat-GPT-5.jpg" alt="شعار اشتراك ChatGPT-5 Plus" loading="lazy" />
+                        <img src="assets/images/OpenAI-Chat-GPT-5.jpg" alt="شعار اشتراك ChatGPT-5 Plus" loading="lazy" data-i18n-attrs="alt:index.bestsellers.card1.alt" />
                     </div>
                     <header>
-                        <span class="pill">ذكاء اصطناعي</span>
-                        <h3>ChatGPT-5 Plus (3 أشهر)</h3>
+                        <span class="pill" data-i18n-key="index.bestsellers.card1.category">ذكاء اصطناعي</span>
+                        <h3 data-i18n-key="index.bestsellers.card1.title">ChatGPT-5 Plus (3 أشهر)</h3>
                     </header>
-                    <p>الوصول إلى أحدث إمكانيات ChatGPT-5 مع مساحة تخزين للمحادثات وميزات الفريق، حساب خاص غير مشترك يمكنك بعد التفعيل تغيير كل البيانات مع ضمان 90 يومًا كاملًا.</p>
+                    <p data-i18n-key="index.bestsellers.card1.description">الوصول إلى أحدث إمكانيات ChatGPT-5 مع مساحة تخزين للمحادثات وميزات الفريق، حساب خاص غير مشترك يمكنك بعد التفعيل تغيير كل البيانات مع ضمان 90 يومًا كاملًا.</p>
                     <div class="bestseller-card__prices">
                         <span class="bestseller-card__price--current" data-price-iqd="55000">
                             <span data-price-amount>55,000</span> <span data-price-unit>د.ع</span>
@@ -187,18 +213,18 @@
                             <span data-price-amount>78,000</span> <span data-price-unit>د.ع</span>
                         </span>
                     </div>
-                    <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener">اطلب الآن</a>
+                    <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener" data-i18n-key="cta.orderNow">اطلب الآن</a>
                 </article>
 
                 <article class="bestseller-card" style="--card-accent:#0056d2">
                     <div class="card-media">
-                        <img src="assets/images/Coursera-.png" alt="شعار اشتراك Coursera Plus" loading="lazy" />
+                        <img src="assets/images/Coursera-.png" alt="شعار اشتراك Coursera Plus" loading="lazy" data-i18n-attrs="alt:index.bestsellers.card2.alt" />
                     </div>
                     <header>
-                        <span class="pill">تعليم</span>
-                        <h3>Coursera Plus (سنة كاملة)</h3>
+                        <span class="pill" data-i18n-key="index.bestsellers.card2.category">تعليم</span>
+                        <h3 data-i18n-key="index.bestsellers.card2.title">Coursera Plus (سنة كاملة)</h3>
                     </header>
-                    <p>تعلم بلا حدود مع آلاف الدورات الاحترافية وشهادات الجامعات العالمية طوال العام، اشتراك سنوي رسمي مضمون على موقع Coursera مع ضمان مستمر طوال مدة السنة من تاريخ الشراء.</p>
+                    <p data-i18n-key="index.bestsellers.card2.description">تعلم بلا حدود مع آلاف الدورات الاحترافية وشهادات الجامعات العالمية طوال العام، اشتراك سنوي رسمي مضمون على موقع Coursera مع ضمان مستمر طوال مدة السنة من تاريخ الشراء.</p>
                     <div class="bestseller-card__prices">
                         <span class="bestseller-card__price--current" data-price-iqd="125000">
                             <span data-price-amount>125,000</span> <span data-price-unit>د.ع</span>
@@ -207,18 +233,18 @@
                             <span data-price-amount>346,000</span> <span data-price-unit>د.ع</span>
                         </span>
                     </div>
-                    <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener">اطلب الآن</a>
+                    <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener" data-i18n-key="cta.orderNow">اطلب الآن</a>
                 </article>
 
                 <article class="bestseller-card" style="--card-accent:#ff6a88">
                     <div class="card-media">
-                        <img src="assets/images/Smarters-IPTV.svg" alt="شعار Smarters IPTV" loading="lazy" />
+                        <img src="assets/images/Smarters-IPTV.svg" alt="شعار Smarters IPTV" loading="lazy" data-i18n-attrs="alt:index.bestsellers.card3.alt" />
                     </div>
                     <header>
-                        <span class="pill">الاشتراكات الرياضية</span>
-                        <h3>Smarters IPTV (سنة + 3 أشهر)</h3>
+                        <span class="pill" data-i18n-key="index.bestsellers.card3.category">الاشتراكات الرياضية</span>
+                        <h3 data-i18n-key="index.bestsellers.card3.title">Smarters IPTV (سنة + 3 أشهر)</h3>
                     </header>
-                    <p>استمتع ببث 4K مستقر على جهازين مع أكثر من 9,800 قناة عالمية ومكتبة أفلام ومسلسلات متجددة، مع دعم مستمر وخصم 25% لفترة محدودة.</p>
+                    <p data-i18n-key="index.bestsellers.card3.description">استمتع ببث 4K مستقر على جهازين مع أكثر من 9,800 قناة عالمية ومكتبة أفلام ومسلسلات متجددة، مع دعم مستمر وخصم 25% لفترة محدودة.</p>
                     <div class="bestseller-card__prices">
                         <span class="bestseller-card__price--current" data-price-iqd="150000">
                             <span data-price-amount>150,000</span> <span data-price-unit>د.ع</span>
@@ -227,89 +253,89 @@
                             <span data-price-amount>200,000</span> <span data-price-unit>د.ع</span>
                         </span>
                     </div>
-                    <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener">اطلب الآن</a>
+                    <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener" data-i18n-key="cta.orderNow">اطلب الآن</a>
                 </article>
             </div>
         </section>
 
         <section class="section section--accent" id="assurance">
             <div class="container section__header">
-                <h2>ضمان الأمان حسب مدة الاشتراك</h2>
-                <p>نخصص سياسات حماية ومتابعة لكل منتج لضمان استمرارية الخدمة وسرعة الاستجابة مهما كانت مدة الاشتراك.</p>
+                <h2 data-i18n-key="index.assurance.title">ضمان الأمان حسب مدة الاشتراك</h2>
+                <p data-i18n-key="index.assurance.subtitle">نخصص سياسات حماية ومتابعة لكل منتج لضمان استمرارية الخدمة وسرعة الاستجابة مهما كانت مدة الاشتراك.</p>
             </div>
             <div class="container safety-grid">
                 <article class="safety-card">
                     <header>
-                        <h3>اشتراكات شهرية</h3>
-                        <span>ضمان طوال مدة الاشتراك</span>
+                        <h3 data-i18n-key="index.assurance.card1.title">اشتراكات شهرية</h3>
+                        <span data-i18n-key="index.assurance.card1.subtitle">ضمان طوال مدة الاشتراك</span>
                     </header>
                     <ul>
-                        <li>مراقبة يومية لحالة الوصول وتحديث كلمات المرور عند الحاجة.</li>
-                        <li>استجابة فورية لأي طلب إيقاف أو تعليق من المنصة.</li>
-                        <li>تعويض مباشر بحساب بديل في حال تعذر التفعيل.</li>
+                        <li data-i18n-key="index.assurance.card1.item1">مراقبة يومية لحالة الوصول وتحديث كلمات المرور عند الحاجة.</li>
+                        <li data-i18n-key="index.assurance.card1.item2">استجابة فورية لأي طلب إيقاف أو تعليق من المنصة.</li>
+                        <li data-i18n-key="index.assurance.card1.item3">تعويض مباشر بحساب بديل في حال تعذر التفعيل.</li>
                     </ul>
-                    <span class="safety-card__badge">متابعة تلقائية</span>
+                    <span class="safety-card__badge" data-i18n-key="index.assurance.card1.badge">متابعة تلقائية</span>
                 </article>
                 <article class="safety-card">
                     <header>
-                        <h3>اشتراكات نصف سنوية</h3>
-                        <span>ضمان طوال مدة الاشتراك</span>
+                        <h3 data-i18n-key="index.assurance.card2.title">اشتراكات نصف سنوية</h3>
+                        <span data-i18n-key="index.assurance.card2.subtitle">ضمان طوال مدة الاشتراك</span>
                     </header>
                     <ul>
-                        <li>مراجعة أمنية أسبوعية مع توثيق الأجهزة المصرح بها فقط.</li>
-                        <li>تنبيهات استباقية للحفاظ على استمرارية الاشتراك دون أي انقطاع.</li>
-                        <li>خيارات ترقية مرنة تعزز الخصوصية والثقة عند حدوث أي مشكلة.</li>
+                        <li data-i18n-key="index.assurance.card2.item1">مراجعة أمنية أسبوعية مع توثيق الأجهزة المصرح بها فقط.</li>
+                        <li data-i18n-key="index.assurance.card2.item2">تنبيهات استباقية للحفاظ على استمرارية الاشتراك دون أي انقطاع.</li>
+                        <li data-i18n-key="index.assurance.card2.item3">خيارات ترقية مرنة تعزز الخصوصية والثقة عند حدوث أي مشكلة.</li>
                     </ul>
-                    <span class="safety-card__badge">خصوصية وأمان</span>
+                    <span class="safety-card__badge" data-i18n-key="index.assurance.card2.badge">خصوصية وأمان</span>
                 </article>
                 <article class="safety-card">
                     <header>
-                        <h3>اشتراكات سنوية</h3>
-                        <span>ضمان طوال مدة الاشتراك</span>
+                        <h3 data-i18n-key="index.assurance.card3.title">اشتراكات سنوية</h3>
+                        <span data-i18n-key="index.assurance.card3.subtitle">ضمان طوال مدة الاشتراك</span>
                     </header>
                     <ul>
-                        <li>توثيق مزدوج للحسابات مع تغيير دوري لكلمة المرور.</li>
-                        <li>سجل كامل لكل العمليات وطلب نسخ الاحتياطي عند الطلب.</li>
-                        <li>إدارة تلقائية للتجديد مع استشارة قبل الخصم.</li>
+                        <li data-i18n-key="index.assurance.card3.item1">توثيق مزدوج للحسابات مع تغيير دوري لكلمة المرور.</li>
+                        <li data-i18n-key="index.assurance.card3.item2">سجل كامل لكل العمليات وطلب نسخ الاحتياطي عند الطلب.</li>
+                        <li data-i18n-key="index.assurance.card3.item3">إدارة تلقائية للتجديد مع استشارة قبل الخصم.</li>
                     </ul>
-                    <span class="safety-card__badge">خدمة VIP</span>
+                    <span class="safety-card__badge" data-i18n-key="index.assurance.card3.badge">خدمة VIP</span>
                 </article>
             </div>
             <div class="container safety-cta">
-                <a class="cta" href="purchase.html#steps">خطوات الشراء</a>
-                <span>ينقلك إلى قسم "ثلاث خطوات فقط" لمعرفة تفاصيل العملية.</span>
+                <a class="cta" href="purchase.html#steps" data-i18n-key="index.assurance.cta">خطوات الشراء</a>
+                <span data-i18n-key="index.assurance.note">ينقلك إلى قسم "ثلاث خطوات فقط" لمعرفة تفاصيل العملية.</span>
             </div>
         </section>
 
         <section class="section payment-section" id="payment">
             <div class="container section__header">
-                <h2>طرق الدفع المتاحة</h2>
-                <p>معلومات الدفع التالية افتراضية وستتم تحديثها بالبيانات الفعلية بعد الاعتماد النهائي.</p>
+                <h2 data-i18n-key="index.payment.title">طرق الدفع المتاحة</h2>
+                <p data-i18n-key="index.payment.subtitle">معلومات الدفع التالية افتراضية وستتم تحديثها بالبيانات الفعلية بعد الاعتماد النهائي.</p>
             </div>
             <div class="container payment-grid">
                 <article class="payment-card">
                     <div class="payment-card__header">
                         <div class="payment-card__logo">
-                            <img src="assets/images/zaincash-logo.svg" alt="شعار محفظة ZainCash" loading="lazy" />
-                            <h3>ZainCash</h3>
+                            <img src="assets/images/zaincash-logo.svg" alt="شعار محفظة ZainCash" loading="lazy" data-i18n-attrs="alt:index.payment.card1.alt" />
+                            <h3 data-i18n-key="index.payment.card1.title">ZainCash</h3>
                         </div>
                         <div class="payment-card__qr">
-                            <img src="assets/images/qr-placeholder-zaincash.svg" alt="رمز QR افتراضي لتحويل ZainCash" loading="lazy" />
+                            <img src="assets/images/qr-placeholder-zaincash.svg" alt="رمز QR افتراضي لتحويل ZainCash" loading="lazy" data-i18n-attrs="alt:index.payment.card1.qrAlt" />
                         </div>
                     </div>
                     <div class="payment-card__body">
                         <div class="payment-card__details">
-                            <span>اسم المحفظة: PLUS STORE</span>
-                            <span>رقم المحفظة: 0770 000 0000</span>
-                            <span>ملاحظة التحويل: اسم المنتج + رقم الطلب</span>
+                            <span data-i18n-key="index.payment.card1.detail1">اسم المحفظة: PLUS STORE</span>
+                            <span data-i18n-key="index.payment.card1.detail2">رقم المحفظة: 0770 000 0000</span>
+                            <span data-i18n-key="index.payment.card1.detail3">ملاحظة التحويل: اسم المنتج + رقم الطلب</span>
                         </div>
                         <div class="payment-card__meta">
-                            <span>رسوم التحويل: 0%</span>
-                            <span>التحقق: فوري</span>
+                            <span data-i18n-key="index.payment.card1.meta1">رسوم التحويل: 0%</span>
+                            <span data-i18n-key="index.payment.card1.meta2">التحقق: فوري</span>
                         </div>
                         <div class="payment-card__actions">
-                            <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener">إرسال وصل الدفع</a>
-                            <a class="cta cta--ghost" href="purchase.html#steps">تعليمات الدفع</a>
+                            <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener" data-i18n-key="index.payment.card1.ctaPrimary">إرسال وصل الدفع</a>
+                            <a class="cta cta--ghost" href="purchase.html#steps" data-i18n-key="index.payment.card1.ctaSecondary">تعليمات الدفع</a>
                         </div>
                     </div>
                 </article>
@@ -317,26 +343,26 @@
                 <article class="payment-card">
                     <div class="payment-card__header">
                         <div class="payment-card__logo">
-                            <img src="assets/images/qicard-logo.svg" alt="شعار بطاقة QiCard" loading="lazy" />
-                            <h3>QiCard</h3>
+                            <img src="assets/images/qicard-logo.svg" alt="شعار بطاقة QiCard" loading="lazy" data-i18n-attrs="alt:index.payment.card2.alt" />
+                            <h3 data-i18n-key="index.payment.card2.title">QiCard</h3>
                         </div>
                         <div class="payment-card__qr">
-                            <img src="assets/images/qr-placeholder-qicard.svg" alt="رمز QR افتراضي لتحويل QiCard" loading="lazy" />
+                            <img src="assets/images/qr-placeholder-qicard.svg" alt="رمز QR افتراضي لتحويل QiCard" loading="lazy" data-i18n-attrs="alt:index.payment.card2.qrAlt" />
                         </div>
                     </div>
                     <div class="payment-card__body">
                         <div class="payment-card__details">
-                            <span>اسم الحساب: PLUS STORE</span>
-                            <span>رقم البطاقة: 5890 0000 0000 0000</span>
-                            <span>تعليمات: أرسل صورة الإيصال بعد التحويل</span>
+                            <span data-i18n-key="index.payment.card2.detail1">اسم الحساب: PLUS STORE</span>
+                            <span data-i18n-key="index.payment.card2.detail2">رقم البطاقة: 5890 0000 0000 0000</span>
+                            <span data-i18n-key="index.payment.card2.detail3">تعليمات: أرسل صورة الإيصال بعد التحويل</span>
                         </div>
                         <div class="payment-card__meta">
-                            <span>ساعات العمل: 10 ص - 1 ص</span>
-                            <span>المعالجة: خلال 5 دقائق</span>
+                            <span data-i18n-key="index.payment.card2.meta1">ساعات العمل: 10 ص - 1 ص</span>
+                            <span data-i18n-key="index.payment.card2.meta2">المعالجة: خلال 5 دقائق</span>
                         </div>
                         <div class="payment-card__actions">
-                            <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener">تأكيد التحويل</a>
-                            <a class="cta cta--ghost" href="purchase.html#faq">الأسئلة الشائعة</a>
+                            <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener" data-i18n-key="index.payment.card2.ctaPrimary">تأكيد التحويل</a>
+                            <a class="cta cta--ghost" href="purchase.html#faq" data-i18n-key="index.payment.card2.ctaSecondary">الأسئلة الشائعة</a>
                         </div>
                     </div>
                 </article>
@@ -345,23 +371,23 @@
 
         <section class="section metrics-section" id="metrics">
             <div class="container section__header">
-                <h2>أرقام تثق بها</h2>
-                <p>نواصل تقديم خدماتنا بثبات مع دعم كامل على مدار الساعة وشراكات موسعة.</p>
+                <h2 data-i18n-key="index.metrics.title">أرقام تثق بها</h2>
+                <p data-i18n-key="index.metrics.subtitle">نواصل تقديم خدماتنا بثبات مع دعم كامل على مدار الساعة وشراكات موسعة.</p>
             </div>
             <div class="container hero__stats" aria-label="إحصائيات المتجر">
                 <article>
                     <h3>
                         <span class="counter" data-counter-start="0" data-counter-end="1834" data-counter-prefix="+" data-counter-duration="5200">+0</span>
                     </h3>
-                    <p>طلب ناجح خلال 2025</p>
+                    <p data-i18n-key="index.metrics.stat1">طلب ناجح خلال 2025</p>
                 </article>
                 <article>
-                    <h3>24/7</h3>
-                    <p>دعم فني سريع بالعربية</p>
+                    <h3 data-i18n-key="index.metrics.stat2.heading">24/7</h3>
+                    <p data-i18n-key="index.metrics.stat2.copy">دعم فني سريع بالعربية</p>
                 </article>
                 <article>
-                    <h3>+50</h3>
-                    <p>شراكات رسمية مع مزودين</p>
+                    <h3 data-i18n-key="index.metrics.stat3.heading">+50</h3>
+                    <p data-i18n-key="index.metrics.stat3.copy">شراكات رسمية مع مزودين</p>
                 </article>
             </div>
         </section>
@@ -371,26 +397,26 @@
         <div class="container footer__inner">
             <div>
                 <h4>PLUS STORE</h4>
-                <p>نبني الثقة مع كل عملية شراء ونوفّر أفضل التجارب الرقمية.</p>
+                <p data-i18n-key="footer.about">نبني الثقة مع كل عملية شراء ونوفّر أفضل التجارب الرقمية.</p>
             </div>
             <div>
-                <h5>تواصل معنا</h5>
+                <h5 data-i18n-key="footer.contact.title">تواصل معنا</h5>
                 <ul>
                     <li><a href="mailto:support@plusstore.iq">support@plusstore.iq</a></li>
                     <li><a href="tel:+9647700000000">+964 770 000 0000</a></li>
-                    <li><a href="https://t.me/plusstore" target="_blank" rel="noopener">تليجرام</a></li>
+                    <li><a href="https://t.me/plusstore" target="_blank" rel="noopener" data-i18n-key="footer.contact.telegram">تليجرام</a></li>
                 </ul>
             </div>
             <div>
-                <h5>روابط سريعة</h5>
+                <h5 data-i18n-key="footer.links.title">روابط سريعة</h5>
                 <ul>
-                    <li><a href="subscriptions.html">الاشتراكات</a></li>
-                    <li><a href="accounts.html">الحسابات</a></li>
-                    <li><a href="offers.html">العروض</a></li>
+                    <li><a href="subscriptions.html" data-i18n-key="footer.links.subscriptions">الاشتراكات</a></li>
+                    <li><a href="accounts.html" data-i18n-key="footer.links.accounts">الحسابات</a></li>
+                    <li><a href="offers.html" data-i18n-key="footer.links.offers">العروض</a></li>
                 </ul>
             </div>
         </div>
-        <p class="footer__copy">© 2025 PLUS STORE. جميع الحقوق محفوظة.</p>
+        <p class="footer__copy" data-i18n-key="footer.copy">© 2025 PLUS STORE. جميع الحقوق محفوظة.</p>
     </footer>
 
     <!-- Schema.org Structured Data for SEO -->

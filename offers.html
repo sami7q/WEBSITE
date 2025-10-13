@@ -34,68 +34,94 @@
     <link rel="stylesheet" href="assets/css/footer.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
 </head>
-<body>
-    <div class="announcement" role="region" aria-label="تنبيه الصفقات">
+<body data-page="offers">
+    <div class="announcement" role="region" aria-label="أحدث العروض" data-i18n-attrs="aria-label:announcement.regionLabel">
         <div class="container announcement__inner">
-            <span>FLASH DEAL</span>
-            <span class="announcement__ticker" data-phrases="شحن فوري لستيم بـ خصم 15%,بطاقات بلايستيشن مخفضة حتى 20%,باقة فورتنايت مع 2,000 في-بكس"></span>
-            <a href="https://wa.me/9647700000000" class="announcement__cta" target="_blank" rel="noopener">اطلب الآن</a>
+            <span data-i18n-key="announcement.prefix">عرض اليوم:</span>
+            <span class="announcement__ticker" data-phrases="خصم 25% على البلايستيشن بلس,شحن فوري لبطاقات بوبجي,هدايا مجانية مع حسابات نتفلكس" data-i18n-attrs="data-phrases:announcement.ticker"></span>
+            <a href="offers.html" class="announcement__cta" data-i18n-key="announcement.cta">استفد الآن</a>
         </div>
     </div>
 
     <header class="site-header">
         <div class="container header__inner">
-            <a class="logo" href="index.html" aria-label="العودة إلى الصفحة الرئيسية">PLUS STORE</a>
-            <button class="menu-toggle" type="button" aria-label="فتح القائمة" aria-expanded="false">
+            <a class="logo" href="index.html" aria-label="العودة إلى الصفحة الرئيسية" data-i18n-attrs="aria-label:header.logo.ariaLabel">PLUS STORE</a>
+            <button class="menu-toggle" type="button" aria-label="فتح القائمة" aria-expanded="false" data-i18n-attrs="aria-label:header.menu.open">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <div class="site-nav__search">
                 <div class="search" role="search">
-                    <label class="search__label visually-hidden" for="site-search">بحث</label>
-                    <input class="search__input" type="search" id="site-search" name="search" placeholder="بحث..." autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-controls="search-suggestions" />
-                    <button class="search__clear" type="button" aria-label="مسح البحث"></button>
+                    <label class="search__label visually-hidden" for="site-search" data-i18n-key="header.search.label">بحث</label>
+                    <input class="search__input" type="search" id="site-search" name="search" placeholder="بحث..." autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-controls="search-suggestions" data-i18n-attrs="placeholder:header.search.placeholder" />
+                    <button class="search__clear" type="button" aria-label="مسح البحث" data-i18n-attrs="aria-label:header.search.clear"></button>
                     <ul class="search__suggestions" id="search-suggestions" role="listbox"></ul>
                 </div>
+            </div>
+            <div class="language-switcher" data-language-switcher>
+                <button class="language-switcher__toggle" type="button" aria-haspopup="listbox" aria-expanded="false">
+                    <span class="language-switcher__icon" aria-hidden="true">🌐</span>
+                    <span class="language-switcher__label" data-language-label>العربية</span>
+                </button>
+                <ul class="language-switcher__list" role="listbox" hidden>
+                    <li>
+                        <button class="language-switcher__option is-selected" type="button" role="option" data-language-option="ar" data-language-dir="rtl" aria-selected="true" lang="ar">
+                            <span class="language-switcher__option-label">العربية</span>
+                            <span class="language-switcher__option-code">AR</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="language-switcher__option" type="button" role="option" data-language-option="tr" data-language-dir="ltr" aria-selected="false" lang="tr">
+                            <span class="language-switcher__option-label">Türkçe</span>
+                            <span class="language-switcher__option-code">TR</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="language-switcher__option" type="button" role="option" data-language-option="en" data-language-dir="ltr" aria-selected="false" lang="en">
+                            <span class="language-switcher__option-label">English</span>
+                            <span class="language-switcher__option-code">EN</span>
+                        </button>
+                    </li>
+                </ul>
             </div>
             <div class="currency-widget" data-currency-widget>
                 <button class="currency-widget__toggle" type="button" aria-expanded="false">IQD</button>
                 <div class="currency-widget__panel" hidden>
-                    <span class="currency-widget__title">اختر العملة</span>
+                    <span class="currency-widget__title" data-i18n-key="currency.title">اختر العملة</span>
                     <ul>
                         <li>
                             <button class="currency-widget__option is-selected" type="button" data-currency-option="IQD">
-                                <span>IQD</span>
-                                <strong>د.ع</strong>
+                                <span data-i18n-key="currency.option.iqd">IQD</span>
+                                <strong data-i18n-key="currency.option.iqdSymbol">د.ع</strong>
                             </button>
                         </li>
                         <li>
                             <button class="currency-widget__option" type="button" data-currency-option="USD">
-                                <span>USD</span>
-                                <strong>$</strong>
+                                <span data-i18n-key="currency.option.usd">USD</span>
+                                <strong data-i18n-key="currency.option.usdSymbol">$</strong>
                             </button>
                         </li>
                         <li>
                             <button class="currency-widget__option" type="button" data-currency-option="TL">
-                                <span>TL</span>
-                                <strong>₺</strong>
+                                <span data-i18n-key="currency.option.tl">TL</span>
+                                <strong data-i18n-key="currency.option.tlSymbol">₺</strong>
                             </button>
                         </li>
                     </ul>
                 </div>
             </div>
-            <nav class="site-nav" aria-label="القائمة الرئيسية">
+            <nav class="site-nav" aria-label="القائمة الرئيسية" data-i18n-attrs="aria-label:header.nav.ariaLabel">
                 <ul>
-                    <li><a href="index.html" data-page="index">الرئيسية</a></li>
-                    <li><a href="subscriptions.html" data-page="subscriptions">الاشتراكات الرقمية</a></li>
-                    <li><a href="accounts.html" data-page="accounts">الحسابات الجاهزة</a></li>
-                    <li><a href="offers.html" data-page="offers">الاشتراكات الرياضية</a></li>
-                    <li><a href="purchase.html" data-page="purchase">طريقة الشراء</a></li>
+                    <li><a href="index.html" data-page="index" data-i18n-key="nav.home">الرئيسية</a></li>
+                    <li><a href="subscriptions.html" data-page="subscriptions" data-i18n-key="nav.subscriptions">الاشتراكات الرقمية</a></li>
+                    <li><a href="accounts.html" data-page="accounts" data-i18n-key="nav.accounts">الحسابات الجاهزة</a></li>
+                    <li><a href="offers.html" data-page="offers" data-i18n-key="nav.offers">الاشتراكات الرياضية</a></li>
+                    <li><a href="purchase.html" data-page="purchase" data-i18n-key="nav.purchase">طريقة الشراء</a></li>
                 </ul>
             </nav>
             <div class="header__cta">
-                <a class="cta" data-cta-primary href="https://wa.me/9647700000000" target="_blank" rel="noopener">اطلب الآن</a>
+                <a class="cta" data-cta-primary href="https://wa.me/9647700000000" target="_blank" rel="noopener" data-i18n-key="header.cta.order">اطلب الآن</a>
             </div>
         </div>
     </header>
@@ -104,16 +130,16 @@
         <section class="page-hero page-hero--offers">
             <div class="container page-hero__inner">
                 <div>
-                    <nav class="breadcrumb" aria-label="مسار التنقل">
-                        <a href="index.html">الرئيسية</a>
+                    <nav class="breadcrumb" aria-label="مسار التنقل" data-i18n-attrs="aria-label:breadcrumbs.ariaLabel">
+                        <a href="index.html" data-i18n-key="nav.home">الرئيسية</a>
                         <span aria-hidden="true"> / </span>
-                        <span>الاشتراكات الرياضية</span>
+                        <span data-i18n-key="offers.hero.breadcrumbCurrent">الاشتراكات الرياضية</span>
                     </nav>
-                    <h1>أقوى الاشتراكات الرياضية المباشرة</h1>
-                    <p>تابع كل البطولات العالمية مع باقات IPTV مستقرة، خصومات يومية، وتفعيل فوري على أجهزتك المفضلة.</p>
+                    <h1 data-i18n-key="offers.hero.title">أقوى الاشتراكات الرياضية المباشرة</h1>
+                    <p data-i18n-key="offers.hero.subtitle">تابع كل البطولات العالمية مع باقات IPTV مستقرة، خصومات يومية، وتفعيل فوري على أجهزتك المفضلة.</p>
                     <div class="hero__actions">
-                        <a class="cta" href="#sports-subscriptions">شاهد الباقات المتاحة</a>
-                        <a class="cta cta--ghost" href="#flash-sale">عرض اليوم</a>
+                        <a class="cta" href="#sports-subscriptions" data-i18n-key="offers.hero.cta.primary">شاهد الباقات المتاحة</a>
+                        <a class="cta cta--ghost" href="#flash-sale" data-i18n-key="offers.hero.cta.secondary">عرض اليوم</a>
                     </div>
                 </div>
                 <div class="page-hero__image" aria-hidden="true">
@@ -129,10 +155,10 @@
         <section class="section" id="flash-sale">
             <div class="container flash-banner">
                 <div>
-                    <h2>عرض اليوم: خصم 25% على بطاقات بلايستيشن</h2>
-                    <p>الشحن فوري مع إرسال كود البطاقة إلى بريدك. ينتهي العرض في <span class="flash-banner__deadline" data-flash-deadline></span>.</p>
+                    <h2 data-i18n-key="offers.flash.title">عرض اليوم: خصم 25% على بطاقات بلايستيشن</h2>
+                    <p data-i18n-key="offers.flash.description" data-i18n-html="true">الشحن فوري مع إرسال كود البطاقة إلى بريدك. ينتهي العرض في <span class="flash-banner__deadline" data-flash-deadline></span>.</p>
                 </div>
-                <div class="flash-timer" role="status" aria-live="polite">
+                <div class="flash-timer" role="status" aria-live="polite" data-i18n-attrs="aria-live:offers.flash.timerAria">
                     <span class="flash-timer__part" data-unit="days">07</span>
                     <span class="flash-timer__sep">:</span>
                     <span class="flash-timer__part" data-unit="hours">00</span>
@@ -146,107 +172,107 @@
 
         <section class="section" id="sports-subscriptions">
             <div class="container section__header">
-                <h2>الاشتراكات الرياضية الأفضل</h2>
-                <p>تابع بطولاتك المفضلة مع باقات حصرية ومضمونة لأشهر المنصات الرياضية العالمية.</p>
+                <h2 data-i18n-key="offers.catalog.title">الاشتراكات الرياضية الأفضل</h2>
+                <p data-i18n-key="offers.catalog.subtitle">تابع بطولاتك المفضلة مع باقات حصرية ومضمونة لأشهر المنصات الرياضية العالمية.</p>
             </div>
             <div class="container offer-grid">
                 <article class="offer-card" style="--card-accent:#ff6a88">
                     <div class="card-media">
-                        <img src="assets/images/Smarters-IPTV.svg" alt="شعار Smarters IPTV" loading="lazy" />
+                        <img src="assets/images/Smarters-IPTV.svg" alt="شعار Smarters IPTV" loading="lazy" data-i18n-attrs="alt:offers.catalog.brandAlt" />
                     </div>
                     <header>
-                        <span class="pill">Smarters IPTV</span>
-                        <h3>سنة + 3 أشهر لجهازين</h3>
+                        <span class="pill" data-i18n-key="offers.catalog.card1.brand">Smarters IPTV</span>
+                        <h3 data-i18n-key="offers.catalog.card1.title">سنة + 3 أشهر لجهازين</h3>
                     </header>
                     <div class="offer-card__body">
                         <div class="offer-card__pricing">
                             <span class="price price--original" data-price-iqd="200000"><span data-price-amount>200,000</span> <span data-price-unit>د.ع</span></span>
                             <span class="price price--discount" data-price-iqd="150000"><span data-price-amount>150,000</span> <span data-price-unit>د.ع</span></span>
-                            <span class="price-badge">خصم 25%</span>
+                            <span class="price-badge" data-i18n-key="offers.catalog.discountBadge">خصم 25%</span>
                         </div>
                         <ul class="feature-list">
-                            <li>9,800+ قناة عالمية مشفرة ومفتوحة بكل اللغات.</li>
-                            <li>بث موثوق بنسبة استقرار 99% مع تحديثات تلقائية.</li>
-                            <li>مكتبة أفلام ومسلسلات متجددة مع أحدث الإصدارات.</li>
-                            <li>جودة أصلية 4K و Full HD مع صوت واضح وبدون تقطيع.</li>
-                            <li>حرية كاملة: دعم طوال الفترة وبدون رسوم إلغاء.</li>
+                            <li data-i18n-key="offers.catalog.card1.feature1">9,800+ قناة عالمية مشفرة ومفتوحة بكل اللغات.</li>
+                            <li data-i18n-key="offers.catalog.card1.feature2">بث موثوق بنسبة استقرار 99% مع تحديثات تلقائية.</li>
+                            <li data-i18n-key="offers.catalog.card1.feature3">مكتبة أفلام ومسلسلات متجددة مع أحدث الإصدارات.</li>
+                            <li data-i18n-key="offers.catalog.card1.feature4">جودة أصلية 4K و Full HD مع صوت واضح وبدون تقطيع.</li>
+                            <li data-i18n-key="offers.catalog.card1.feature5">حرية كاملة: دعم طوال الفترة وبدون رسوم إلغاء.</li>
                         </ul>
-                        <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener">اطلب الآن</a>
+                        <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener" data-i18n-key="offers.catalog.card1.cta">اطلب الآن</a>
                     </div>
                 </article>
 
                 <article class="offer-card" style="--card-accent:#ff6a88">
                     <div class="card-media">
-                        <img src="assets/images/Smarters-IPTV.svg" alt="شعار Smarters IPTV" loading="lazy" />
+                        <img src="assets/images/Smarters-IPTV.svg" alt="شعار Smarters IPTV" loading="lazy" data-i18n-attrs="alt:offers.catalog.brandAlt" />
                     </div>
                     <header>
-                        <span class="pill">Smarters IPTV</span>
-                        <h3>سنة + 3 أشهر جهاز واحد</h3>
+                        <span class="pill" data-i18n-key="offers.catalog.card2.brand">Smarters IPTV</span>
+                        <h3 data-i18n-key="offers.catalog.card2.title">سنة + 3 أشهر جهاز واحد</h3>
                     </header>
                     <div class="offer-card__body">
                         <div class="offer-card__pricing">
                             <span class="price price--original" data-price-iqd="132000"><span data-price-amount>132,000</span> <span data-price-unit>د.ع</span></span>
                             <span class="price price--discount" data-price-iqd="99000"><span data-price-amount>99,000</span> <span data-price-unit>د.ع</span></span>
-                            <span class="price-badge">خصم 25%</span>
+                            <span class="price-badge" data-i18n-key="offers.catalog.discountBadge">خصم 25%</span>
                         </div>
                         <ul class="feature-list">
-                            <li>9,800+ قناة عالمية مشفرة ومفتوحة بكل اللغات.</li>
-                            <li>بث موثوق بنسبة استقرار 99% مع تحديثات تلقائية.</li>
-                            <li>مكتبة أفلام ومسلسلات متجددة مع أحدث الإصدارات.</li>
-                            <li>جودة أصلية 4K و Full HD مع صوت واضح وبدون تقطيع.</li>
-                            <li>حرية كاملة: دعم طوال الفترة وبدون رسوم إلغاء.</li>
+                            <li data-i18n-key="offers.catalog.card2.feature1">9,800+ قناة عالمية مشفرة ومفتوحة بكل اللغات.</li>
+                            <li data-i18n-key="offers.catalog.card2.feature2">بث موثوق بنسبة استقرار 99% مع تحديثات تلقائية.</li>
+                            <li data-i18n-key="offers.catalog.card2.feature3">مكتبة أفلام ومسلسلات متجددة مع أحدث الإصدارات.</li>
+                            <li data-i18n-key="offers.catalog.card2.feature4">جودة أصلية 4K و Full HD مع صوت واضح وبدون تقطيع.</li>
+                            <li data-i18n-key="offers.catalog.card2.feature5">حرية كاملة: دعم طوال الفترة وبدون رسوم إلغاء.</li>
                         </ul>
-                        <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener">اطلب الآن</a>
+                        <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener" data-i18n-key="offers.catalog.card2.cta">اطلب الآن</a>
                     </div>
                 </article>
 
                 <article class="offer-card" style="--card-accent:#ff6a88">
                     <div class="card-media">
-                        <img src="assets/images/Smarters-IPTV.svg" alt="شعار Smarters IPTV" loading="lazy" />
+                        <img src="assets/images/Smarters-IPTV.svg" alt="شعار Smarters IPTV" loading="lazy" data-i18n-attrs="alt:offers.catalog.brandAlt" />
                     </div>
                     <header>
-                        <span class="pill">Smarters IPTV</span>
-                        <h3>مدة 6 أشهر</h3>
+                        <span class="pill" data-i18n-key="offers.catalog.card3.brand">Smarters IPTV</span>
+                        <h3 data-i18n-key="offers.catalog.card3.title">مدة 6 أشهر</h3>
                     </header>
                     <div class="offer-card__body">
                         <div class="offer-card__pricing">
                             <span class="price price--original" data-price-iqd="87000"><span data-price-amount>87,000</span> <span data-price-unit>د.ع</span></span>
                             <span class="price price--discount" data-price-iqd="65000"><span data-price-amount>65,000</span> <span data-price-unit>د.ع</span></span>
-                            <span class="price-badge">خصم 25%</span>
+                            <span class="price-badge" data-i18n-key="offers.catalog.discountBadge">خصم 25%</span>
                         </div>
                         <ul class="feature-list">
-                            <li>9,800+ قناة عالمية تشمل البطولات الرياضية الحصرية.</li>
-                            <li>بث ثابت بدقة 4K و Full HD مع تحديثات تلقائية.</li>
-                            <li>مكتبة أفلام ومسلسلات ضخمة يتم تحديثها يوميًا.</li>
-                            <li>تشغيل على جهاز واحد مع إمكانية الترقية في أي وقت.</li>
-                            <li>لا رسوم إلغاء ودعم فني مباشر خلال فترة الاشتراك.</li>
+                            <li data-i18n-key="offers.catalog.card3.feature1">9,800+ قناة عالمية تشمل البطولات الرياضية الحصرية.</li>
+                            <li data-i18n-key="offers.catalog.card3.feature2">بث ثابت بدقة 4K و Full HD مع تحديثات تلقائية.</li>
+                            <li data-i18n-key="offers.catalog.card3.feature3">مكتبة أفلام ومسلسلات ضخمة يتم تحديثها يوميًا.</li>
+                            <li data-i18n-key="offers.catalog.card3.feature4">تشغيل على جهاز واحد مع إمكانية الترقية في أي وقت.</li>
+                            <li data-i18n-key="offers.catalog.card3.feature5">لا رسوم إلغاء ودعم فني مباشر خلال فترة الاشتراك.</li>
                         </ul>
-                        <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener">اطلب الآن</a>
+                        <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener" data-i18n-key="offers.catalog.card3.cta">اطلب الآن</a>
                     </div>
                 </article>
 
                 <article class="offer-card" style="--card-accent:#ff6a88">
                     <div class="card-media">
-                        <img src="assets/images/Smarters-IPTV.svg" alt="شعار Smarters IPTV" loading="lazy" />
+                        <img src="assets/images/Smarters-IPTV.svg" alt="شعار Smarters IPTV" loading="lazy" data-i18n-attrs="alt:offers.catalog.brandAlt" />
                     </div>
                     <header>
-                        <span class="pill">Smarters IPTV</span>
-                        <h3>مدة 3 أشهر</h3>
+                        <span class="pill" data-i18n-key="offers.catalog.card4.brand">Smarters IPTV</span>
+                        <h3 data-i18n-key="offers.catalog.card4.title">مدة 3 أشهر</h3>
                     </header>
                     <div class="offer-card__body">
                         <div class="offer-card__pricing">
                             <span class="price price--original" data-price-iqd="53500"><span data-price-amount>53,500</span> <span data-price-unit>د.ع</span></span>
                             <span class="price price--discount" data-price-iqd="40000"><span data-price-amount>40,000</span> <span data-price-unit>د.ع</span></span>
-                            <span class="price-badge">خصم 25%</span>
+                            <span class="price-badge" data-i18n-key="offers.catalog.discountBadge">خصم 25%</span>
                         </div>
                         <ul class="feature-list">
-                            <li>آلاف القنوات العالمية المباشرة مع أهم الدوريات والبطولات.</li>
-                            <li>مكتبة أفلام ومسلسلات متجددة + محتوى للأطفال.</li>
-                            <li>أداء مستقر مع خوادم سريعة وبدون تقطيع.</li>
-                            <li>جودة صورة 4K و Full HD بحسب جهازك.</li>
-                            <li>دعم فني متواصل وخيارات ترقية سهلة.</li>
+                            <li data-i18n-key="offers.catalog.card4.feature1">آلاف القنوات العالمية المباشرة مع أهم الدوريات والبطولات.</li>
+                            <li data-i18n-key="offers.catalog.card4.feature2">مكتبة أفلام ومسلسلات متجددة + محتوى للأطفال.</li>
+                            <li data-i18n-key="offers.catalog.card4.feature3">أداء مستقر مع خوادم سريعة وبدون تقطيع.</li>
+                            <li data-i18n-key="offers.catalog.card4.feature4">جودة صورة 4K و Full HD بحسب جهازك.</li>
+                            <li data-i18n-key="offers.catalog.card4.feature5">دعم فني متواصل وخيارات ترقية سهلة.</li>
                         </ul>
-                        <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener">اطلب الآن</a>
+                        <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener" data-i18n-key="offers.catalog.card4.cta">اطلب الآن</a>
                     </div>
                 </article>
 
@@ -256,33 +282,33 @@
 
         <section class="section payment-section" id="payment">
             <div class="container section__header">
-                <h2>طرق الدفع لاشتراكات الرياضة</h2>
-                <p>القنوات الحالية تجريبية وسيتم تحديثها بالبيانات النهائية عند الإطلاق الرسمي.</p>
+                <h2 data-i18n-key="offers.payment.title">طرق الدفع لاشتراكات الرياضة</h2>
+                <p data-i18n-key="offers.payment.subtitle">القنوات الحالية تجريبية وسيتم تحديثها بالبيانات النهائية عند الإطلاق الرسمي.</p>
             </div>
             <div class="container payment-grid">
                 <article class="payment-card">
                     <div class="payment-card__header">
                         <div class="payment-card__logo">
-                            <img src="assets/images/zaincash-logo.svg" alt="شعار محفظة ZainCash" loading="lazy" />
-                            <h3>ZainCash</h3>
+                            <img src="assets/images/zaincash-logo.svg" alt="شعار محفظة ZainCash" loading="lazy" data-i18n-attrs="alt:offers.payment.card1.alt" />
+                            <h3 data-i18n-key="offers.payment.card1.title">ZainCash</h3>
                         </div>
                         <div class="payment-card__qr">
-                            <img src="assets/images/qr-placeholder-zaincash.svg" alt="رمز QR افتراضي لتحويل ZainCash" loading="lazy" />
+                            <img src="assets/images/qr-placeholder-zaincash.svg" alt="رمز QR افتراضي لتحويل ZainCash" loading="lazy" data-i18n-attrs="alt:offers.payment.card1.qrAlt" />
                         </div>
                     </div>
                     <div class="payment-card__body">
-                        <div class="payment-card__details">
+                        <div class="payment-card__details" data-i18n-key="offers.payment.card1.details" data-i18n-html="true">
                             <span>اسم المحفظة: PLUS STORE</span>
                             <span>رقم المحفظة: 0770 000 0000</span>
                             <span>الملاحظة: اسم الاشتراك + المدة</span>
                         </div>
-                        <div class="payment-card__meta">
+                        <div class="payment-card__meta" data-i18n-key="offers.payment.card1.meta" data-i18n-html="true">
                             <span>رسوم التحويل: 0%</span>
                             <span>التحقق: فوري</span>
                         </div>
                         <div class="payment-card__actions">
-                            <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener">إرسال الإيصال</a>
-                            <a class="cta cta--ghost" href="purchase.html#steps">تعليمات الدفع</a>
+                            <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener" data-i18n-key="offers.payment.card1.ctaPrimary">إرسال الإيصال</a>
+                            <a class="cta cta--ghost" href="purchase.html#steps" data-i18n-key="offers.payment.card1.ctaSecondary">تعليمات الدفع</a>
                         </div>
                     </div>
                 </article>
@@ -290,26 +316,26 @@
                 <article class="payment-card">
                     <div class="payment-card__header">
                         <div class="payment-card__logo">
-                            <img src="assets/images/qicard-logo.svg" alt="شعار بطاقة QiCard" loading="lazy" />
-                            <h3>QiCard</h3>
+                            <img src="assets/images/qicard-logo.svg" alt="شعار بطاقة QiCard" loading="lazy" data-i18n-attrs="alt:offers.payment.card2.alt" />
+                            <h3 data-i18n-key="offers.payment.card2.title">QiCard</h3>
                         </div>
                         <div class="payment-card__qr">
-                            <img src="assets/images/qr-placeholder-qicard.svg" alt="رمز QR افتراضي لتحويل QiCard" loading="lazy" />
+                            <img src="assets/images/qr-placeholder-qicard.svg" alt="رمز QR افتراضي لتحويل QiCard" loading="lazy" data-i18n-attrs="alt:offers.payment.card2.qrAlt" />
                         </div>
                     </div>
                     <div class="payment-card__body">
-                        <div class="payment-card__details">
+                        <div class="payment-card__details" data-i18n-key="offers.payment.card2.details" data-i18n-html="true">
                             <span>اسم الحساب: PLUS STORE</span>
                             <span>رقم البطاقة: 5890 0000 0000 0000</span>
                             <span>تعليمات: أرسل صورة الوصل بعد التحويل</span>
                         </div>
-                        <div class="payment-card__meta">
+                        <div class="payment-card__meta" data-i18n-key="offers.payment.card2.meta" data-i18n-html="true">
                             <span>ساعات الدعم: 24/7</span>
                             <span>المعالجة: خلال 5 دقائق</span>
                         </div>
                         <div class="payment-card__actions">
-                            <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener">تأكيد التحويل</a>
-                            <a class="cta cta--ghost" href="purchase.html#faq">الأسئلة الشائعة</a>
+                            <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener" data-i18n-key="offers.payment.card2.ctaPrimary">تأكيد التحويل</a>
+                            <a class="cta cta--ghost" href="purchase.html#faq" data-i18n-key="offers.payment.card2.ctaSecondary">الأسئلة الشائعة</a>
                         </div>
                     </div>
                 </article>
@@ -319,16 +345,16 @@
         <section class="section section--accent">
             <div class="container info-grid">
                 <article class="info-card">
-                    <h3>اشترك في نشرة العروض</h3>
-                    <p>يصلك بريد أسبوعي يضم أقوى العروض وتذكير بالعروض المحدودة قبل انتهائها.</p>
+                    <h3 data-i18n-key="offers.info.card1.title">اشترك في نشرة العروض</h3>
+                    <p data-i18n-key="offers.info.card1.body">يصلك بريد أسبوعي يضم أقوى العروض وتذكير بالعروض المحدودة قبل انتهائها.</p>
                 </article>
                 <article class="info-card">
-                    <h3>دعم فوري</h3>
-                    <p>خدمة العملاء متاحة عبر واتساب أو تليجرام لحل أي مشكلة في أقل من 10 دقائق.</p>
+                    <h3 data-i18n-key="offers.info.card2.title">دعم فوري</h3>
+                    <p data-i18n-key="offers.info.card2.body">خدمة العملاء متاحة عبر واتساب أو تليجرام لحل أي مشكلة في أقل من 10 دقائق.</p>
                 </article>
                 <article class="info-card">
-                    <h3>أسعار تنافسية</h3>
-                    <p>نقارن الأسعار عالميًا ونوفر أرخص عرض ممكن مع الحفاظ على الجودة والسرعة.</p>
+                    <h3 data-i18n-key="offers.info.card3.title">أسعار تنافسية</h3>
+                    <p data-i18n-key="offers.info.card3.body">نقارن الأسعار عالميًا ونوفر أرخص عرض ممكن مع الحفاظ على الجودة والسرعة.</p>
                 </article>
             </div>
         </section>

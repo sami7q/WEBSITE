@@ -28,68 +28,94 @@
     <link rel="stylesheet" href="assets/css/footer.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
 </head>
-<body>
-    <div class="announcement" role="region" aria-label="أحدث العروض">
+<body data-page="subscriptions">
+    <div class="announcement" role="region" aria-label="أحدث العروض" data-i18n-attrs="aria-label:announcement.regionLabel">
         <div class="container announcement__inner">
-            <span>تحديثات جديدة:</span>
-            <span class="announcement__ticker" data-phrases="اشتراك نتفلكس بريميوم متوفر الآن,خطة شاهد VIP السنوية بخصم 30%,اشتراك سبوتيفاي العائلي مع هدية شهرية"></span>
-            <a href="offers.html" class="announcement__cta">شاهد التخفيضات</a>
+            <span data-i18n-key="announcement.prefix">عرض اليوم:</span>
+            <span class="announcement__ticker" data-phrases="خصم 25% على البلايستيشن بلس,شحن فوري لبطاقات بوبجي,هدايا مجانية مع حسابات نتفلكس" data-i18n-attrs="data-phrases:announcement.ticker"></span>
+            <a href="offers.html" class="announcement__cta" data-i18n-key="announcement.cta">استفد الآن</a>
         </div>
     </div>
 
     <header class="site-header">
         <div class="container header__inner">
-            <a class="logo" href="index.html" aria-label="العودة إلى الصفحة الرئيسية">PLUS STORE</a>
-            <button class="menu-toggle" type="button" aria-label="فتح القائمة" aria-expanded="false">
+            <a class="logo" href="index.html" aria-label="العودة إلى الصفحة الرئيسية" data-i18n-attrs="aria-label:header.logo.ariaLabel">PLUS STORE</a>
+            <button class="menu-toggle" type="button" aria-label="فتح القائمة" aria-expanded="false" data-i18n-attrs="aria-label:header.menu.open">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <div class="site-nav__search">
                 <div class="search" role="search">
-                    <label class="search__label visually-hidden" for="site-search">بحث</label>
-                    <input class="search__input" type="search" id="site-search" name="search" placeholder="بحث..." autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-controls="search-suggestions" />
-                    <button class="search__clear" type="button" aria-label="مسح البحث"></button>
+                    <label class="search__label visually-hidden" for="site-search" data-i18n-key="header.search.label">بحث</label>
+                    <input class="search__input" type="search" id="site-search" name="search" placeholder="بحث..." autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-controls="search-suggestions" data-i18n-attrs="placeholder:header.search.placeholder" />
+                    <button class="search__clear" type="button" aria-label="مسح البحث" data-i18n-attrs="aria-label:header.search.clear"></button>
                     <ul class="search__suggestions" id="search-suggestions" role="listbox"></ul>
                 </div>
+            </div>
+            <div class="language-switcher" data-language-switcher>
+                <button class="language-switcher__toggle" type="button" aria-haspopup="listbox" aria-expanded="false">
+                    <span class="language-switcher__icon" aria-hidden="true">🌐</span>
+                    <span class="language-switcher__label" data-language-label>العربية</span>
+                </button>
+                <ul class="language-switcher__list" role="listbox" hidden>
+                    <li>
+                        <button class="language-switcher__option is-selected" type="button" role="option" data-language-option="ar" data-language-dir="rtl" aria-selected="true" lang="ar">
+                            <span class="language-switcher__option-label">العربية</span>
+                            <span class="language-switcher__option-code">AR</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="language-switcher__option" type="button" role="option" data-language-option="tr" data-language-dir="ltr" aria-selected="false" lang="tr">
+                            <span class="language-switcher__option-label">Türkçe</span>
+                            <span class="language-switcher__option-code">TR</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="language-switcher__option" type="button" role="option" data-language-option="en" data-language-dir="ltr" aria-selected="false" lang="en">
+                            <span class="language-switcher__option-label">English</span>
+                            <span class="language-switcher__option-code">EN</span>
+                        </button>
+                    </li>
+                </ul>
             </div>
             <div class="currency-widget" data-currency-widget>
                 <button class="currency-widget__toggle" type="button" aria-expanded="false">IQD</button>
                 <div class="currency-widget__panel" hidden>
-                    <span class="currency-widget__title">اختر العملة</span>
+                    <span class="currency-widget__title" data-i18n-key="currency.title">اختر العملة</span>
                     <ul>
                         <li>
                             <button class="currency-widget__option is-selected" type="button" data-currency-option="IQD">
-                                <span>IQD</span>
-                                <strong>د.ع</strong>
+                                <span data-i18n-key="currency.option.iqd">IQD</span>
+                                <strong data-i18n-key="currency.option.iqdSymbol">د.ع</strong>
                             </button>
                         </li>
                         <li>
                             <button class="currency-widget__option" type="button" data-currency-option="USD">
-                                <span>USD</span>
-                                <strong>$</strong>
+                                <span data-i18n-key="currency.option.usd">USD</span>
+                                <strong data-i18n-key="currency.option.usdSymbol">$</strong>
                             </button>
                         </li>
                         <li>
                             <button class="currency-widget__option" type="button" data-currency-option="TL">
-                                <span>TL</span>
-                                <strong>₺</strong>
+                                <span data-i18n-key="currency.option.tl">TL</span>
+                                <strong data-i18n-key="currency.option.tlSymbol">₺</strong>
                             </button>
                         </li>
                     </ul>
                 </div>
             </div>
-            <nav class="site-nav" aria-label="القائمة الرئيسية">
+            <nav class="site-nav" aria-label="القائمة الرئيسية" data-i18n-attrs="aria-label:header.nav.ariaLabel">
                 <ul>
-                    <li><a href="index.html" data-page="index">الرئيسية</a></li>
-                    <li><a href="subscriptions.html" data-page="subscriptions">الاشتراكات الرقمية</a></li>
-                    <li><a href="accounts.html" data-page="accounts">الحسابات الجاهزة</a></li>
-                    <li><a href="offers.html" data-page="offers">الاشتراكات الرياضية</a></li>
-                    <li><a href="purchase.html" data-page="purchase">طريقة الشراء</a></li>
+                    <li><a href="index.html" data-page="index" data-i18n-key="nav.home">الرئيسية</a></li>
+                    <li><a href="subscriptions.html" data-page="subscriptions" data-i18n-key="nav.subscriptions">الاشتراكات الرقمية</a></li>
+                    <li><a href="accounts.html" data-page="accounts" data-i18n-key="nav.accounts">الحسابات الجاهزة</a></li>
+                    <li><a href="offers.html" data-page="offers" data-i18n-key="nav.offers">الاشتراكات الرياضية</a></li>
+                    <li><a href="purchase.html" data-page="purchase" data-i18n-key="nav.purchase">طريقة الشراء</a></li>
                 </ul>
             </nav>
             <div class="header__cta">
-                <a class="cta" data-cta-primary href="https://wa.me/9647700000000" target="_blank" rel="noopener">اطلب الآن</a>
+                <a class="cta" data-cta-primary href="https://wa.me/9647700000000" target="_blank" rel="noopener" data-i18n-key="header.cta.order">اطلب الآن</a>
             </div>
         </div>
     </header>
@@ -98,16 +124,16 @@
         <section class="page-hero page-hero--subscriptions">
             <div class="container page-hero__inner">
                 <div>
-                    <nav class="breadcrumb" aria-label="مسار التنقل">
-                        <a href="index.html">الرئيسية</a>
+                    <nav class="breadcrumb" aria-label="مسار التنقل" data-i18n-attrs="aria-label:breadcrumbs.ariaLabel">
+                        <a href="index.html" data-i18n-key="nav.home">الرئيسية</a>
                         <span aria-hidden="true"> / </span>
-                        <span>الاشتراكات الرقمية</span>
+                        <span data-i18n-key="subscriptions.hero.breadcrumbCurrent">الاشتراكات الرقمية</span>
                     </nav>
-                    <h1>اشتراكات رقمية بضمان كامل</h1>
-                    <p>اختر من بين مجموعة واسعة من الاشتراكات التعليمية، الإنتاجية، والترفيهية مع دعم فني باللغة العربية وضمان استبدال طوال مدة الاشتراك.</p>
+                    <h1 data-i18n-key="subscriptions.hero.title">اشتراكات رقمية بضمان كامل</h1>
+                    <p data-i18n-key="subscriptions.hero.subtitle">اختر من بين مجموعة واسعة من الاشتراكات التعليمية، الإنتاجية، والترفيهية مع دعم فني باللغة العربية وضمان استبدال طوال مدة الاشتراك.</p>
                     <div class="hero__actions">
-                        <a class="cta" href="#catalog">تصفح الباقة الكاملة</a>
-                        <a class="cta cta--ghost" href="purchase.html#steps">تعرف على خطوات الشراء</a>
+                        <a class="cta" href="#catalog" data-i18n-key="subscriptions.hero.cta.browse">تصفح الباقة الكاملة</a>
+                        <a class="cta cta--ghost" href="purchase.html#steps" data-i18n-key="subscriptions.hero.cta.steps">تعرف على خطوات الشراء</a>
                     </div>
                 </div>
                 <div class="page-hero__image" aria-hidden="true">
@@ -122,18 +148,18 @@
 
         <section class="section" id="catalog">
             <div class="container section__header">
-                <h2>اشتراكاتنا</h2>
+                <h2 data-i18n-key="subscriptions.catalog.heading">اشتراكاتنا</h2>
             </div>
             <div class="container subscription-grid">
                 <article class="subscription-card" style="--card-accent:#f78fb3">
                     <div class="subscription-card__media">
-                        <img src="assets/images/CapCut-logo.PNG" alt="شعار اشتراك Capcut Pro" loading="lazy" />
+                        <img src="assets/images/CapCut-logo.PNG" alt="شعار اشتراك Capcut Pro" loading="lazy" data-i18n-attrs="alt:subscriptions.catalog.card1.alt" />
                     </div>
-                    <h3>Capcut Pro</h3>
-                    <p class="subscription-card__price"><span data-price-iqd="22500"><span data-price-amount>22,500</span> <span data-price-unit>د.ع</span></span> / شهرين</p>
-                    <button class="subscription-card__toggle" type="button" aria-expanded="false" aria-controls="details-capcut">تفاصيل</button>
+                    <h3 data-i18n-key="subscriptions.catalog.card1.title">Capcut Pro</h3>
+                    <p class="subscription-card__price" data-i18n-key="subscriptions.catalog.card1.price" data-i18n-html="true"><span data-price-iqd="22500"><span data-price-amount>22,500</span> <span data-price-unit>د.ع</span></span> / شهرين</p>
+                    <button class="subscription-card__toggle" type="button" aria-expanded="false" aria-controls="details-capcut" data-i18n-key="subscriptions.catalog.toggle">تفاصيل</button>
                     <div class="subscription-card__details" id="details-capcut" hidden>
-                        <ul>
+                        <ul data-i18n-key="subscriptions.catalog.card1.details" data-i18n-html="true">
                             <li>نوع الاشتراك: محرر CapCut Pro الاحترافي لصناع المحتوى.</li>
                             <li>المدة: شهران (60 يومًا) من الخصائص المدفوعة الكاملة.</li>
                             <li>الأجهزة المدعومة: iOS، Android، ومتصفح الويب.</li>
@@ -143,13 +169,13 @@
                 </article>
                 <article class="subscription-card" style="--card-accent:#ff6a88">
                     <div class="subscription-card__media">
-                        <img src="assets/images/netflix.png" alt="شعار اشتراك Netflix" loading="lazy" />
+                        <img src="assets/images/netflix.png" alt="شعار اشتراك Netflix" loading="lazy" data-i18n-attrs="alt:subscriptions.catalog.card2.alt" />
                     </div>
-                    <h3>Netflix</h3>
-                    <p class="subscription-card__price"><span data-price-iqd="29985"><span data-price-amount>29,985</span> <span data-price-unit>د.ع</span></span> / 3 أشهر</p>
-                    <button class="subscription-card__toggle" type="button" aria-expanded="false" aria-controls="details-netflix">تفاصيل</button>
+                    <h3 data-i18n-key="subscriptions.catalog.card2.title">Netflix</h3>
+                    <p class="subscription-card__price" data-i18n-key="subscriptions.catalog.card2.price" data-i18n-html="true"><span data-price-iqd="29985"><span data-price-amount>29,985</span> <span data-price-unit>د.ع</span></span> / 3 أشهر</p>
+                    <button class="subscription-card__toggle" type="button" aria-expanded="false" aria-controls="details-netflix" data-i18n-key="subscriptions.catalog.toggle">تفاصيل</button>
                     <div class="subscription-card__details" id="details-netflix" hidden>
-                        <ul>
+                        <ul data-i18n-key="subscriptions.catalog.card2.details" data-i18n-html="true">
                             <li>نوع الاشتراك: Netflix Premium UHD لأربعة ملفات مشاهدة.</li>
                             <li>المدة: 3 أشهر مع إمكانية التمديد بسهولة.</li>
                             <li>الجودة: بث 4K HDR بدون إعلانات وعلى جميع الأجهزة.</li>
@@ -159,13 +185,13 @@
                 </article>
                 <article class="subscription-card" style="--card-accent:#5ecaff">
                     <div class="subscription-card__media">
-                        <img src="assets/images/LINKEDIN.png" alt="شعار اشتراك LinkedIn" loading="lazy" />
+                        <img src="assets/images/LINKEDIN.png" alt="شعار اشتراك LinkedIn" loading="lazy" data-i18n-attrs="alt:subscriptions.catalog.card3.alt" />
                     </div>
-                    <h3>LinkedIn</h3>
-                    <p class="subscription-card__price"><span data-price-iqd="50625"><span data-price-amount>50,625</span> <span data-price-unit>د.ع</span></span> / 3 أشهر</p>
-                    <button class="subscription-card__toggle" type="button" aria-expanded="false" aria-controls="details-linkedin">تفاصيل</button>
+                    <h3 data-i18n-key="subscriptions.catalog.card3.title">LinkedIn</h3>
+                    <p class="subscription-card__price" data-i18n-key="subscriptions.catalog.card3.price" data-i18n-html="true"><span data-price-iqd="50625"><span data-price-amount>50,625</span> <span data-price-unit>د.ع</span></span> / 3 أشهر</p>
+                    <button class="subscription-card__toggle" type="button" aria-expanded="false" aria-controls="details-linkedin" data-i18n-key="subscriptions.catalog.toggle">تفاصيل</button>
                     <div class="subscription-card__details" id="details-linkedin" hidden>
-                        <ul>
+                        <ul data-i18n-key="subscriptions.catalog.card3.details" data-i18n-html="true">
                             <li>نوع الاشتراك: LinkedIn Premium Career للبحث عن الفرص.</li>
                             <li>المدة: 3 أشهر من مزايا الشبكة المهنية الكاملة.</li>
                             <li>المزايا: رسائل InMail غير محدودة وتحليلات حول من شاهد ملفك.</li>
@@ -175,13 +201,13 @@
                 </article>
                 <article class="subscription-card" style="--card-accent:#9b7bff">
                     <div class="subscription-card__media">
-                        <img src="assets/images/GRAMMARLY.png" alt="شعار اشتراك Grammarly Premium" loading="lazy" />
+                        <img src="assets/images/GRAMMARLY.png" alt="شعار اشتراك Grammarly Premium" loading="lazy" data-i18n-attrs="alt:subscriptions.catalog.card4.alt" />
                     </div>
-                    <h3>Grammarly Premium</h3>
-                    <p class="subscription-card__price"><span data-price-iqd="22485"><span data-price-amount>22,485</span> <span data-price-unit>د.ع</span></span> / 3 أشهر</p>
-                    <button class="subscription-card__toggle" type="button" aria-expanded="false" aria-controls="details-grammarly">تفاصيل</button>
+                    <h3 data-i18n-key="subscriptions.catalog.card4.title">Grammarly Premium</h3>
+                    <p class="subscription-card__price" data-i18n-key="subscriptions.catalog.card4.price" data-i18n-html="true"><span data-price-iqd="22485"><span data-price-amount>22,485</span> <span data-price-unit>د.ع</span></span> / 3 أشهر</p>
+                    <button class="subscription-card__toggle" type="button" aria-expanded="false" aria-controls="details-grammarly" data-i18n-key="subscriptions.catalog.toggle">تفاصيل</button>
                     <div class="subscription-card__details" id="details-grammarly" hidden>
-                        <ul>
+                        <ul data-i18n-key="subscriptions.catalog.card4.details" data-i18n-html="true">
                             <li>نوع الاشتراك: Grammarly Premium لمستخدم واحد.</li>
                             <li>المدة: 3 أشهر مع تحديثات فورية للتصحيحات.</li>
                             <li>الميزات: أسلوب كتابة متقدم، كشف الانتحال، وتوصيات سياقية.</li>
@@ -191,13 +217,13 @@
                 </article>
                 <article class="subscription-card" style="--card-accent:#10a37f; --media-gradient-overlay:linear-gradient(140deg, rgba(6, 14, 27, 0.82), rgba(16, 79, 125, 0.55)); --media-gradient-base:linear-gradient(140deg, #061421, #0f2f54 58%, #18aea7)">
                     <div class="subscription-card__media">
-                        <img src="assets/images/OpenAI-Chat-GPT-5.jpg" alt="شعار اشتراك ChatGPT-5 Plus" loading="lazy" />
+                        <img src="assets/images/OpenAI-Chat-GPT-5.jpg" alt="شعار اشتراك ChatGPT-5 Plus" loading="lazy" data-i18n-attrs="alt:subscriptions.catalog.card5.alt" />
                     </div>
-                    <h3>ChatGPT-5 Plus (3 أشهر)</h3>
-                    <p class="subscription-card__price"><span data-price-iqd="55000"><span data-price-amount>55,000</span> <span data-price-unit>د.ع</span></span> / 3 أشهر</p>
-                    <button class="subscription-card__toggle" type="button" aria-expanded="false" aria-controls="details-chatgpt">تفاصيل</button>
+                    <h3 data-i18n-key="subscriptions.catalog.card5.title">ChatGPT-5 Plus (3 أشهر)</h3>
+                    <p class="subscription-card__price" data-i18n-key="subscriptions.catalog.card5.price" data-i18n-html="true"><span data-price-iqd="55000"><span data-price-amount>55,000</span> <span data-price-unit>د.ع</span></span> / 3 أشهر</p>
+                    <button class="subscription-card__toggle" type="button" aria-expanded="false" aria-controls="details-chatgpt" data-i18n-key="subscriptions.catalog.toggle">تفاصيل</button>
                     <div class="subscription-card__details" id="details-chatgpt" hidden>
-                        <ul>
+                        <ul data-i18n-key="subscriptions.catalog.card5.details" data-i18n-html="true">
                             <li>نوع الاشتراك: ChatGPT-5 Plus مع أولوية الوصول للخوادم السريعة.</li>
                             <li>السعر الأصلي: <span data-price-iqd="78000"><span data-price-amount>78,000</span> <span data-price-unit>د.ع</span></span> قبل الخصم.</li>
                             <li>الميزات: أدوات GPTs، رفع ملفات كبيرة، وتخصيصات ذكية للمحادثات.</li>
@@ -207,13 +233,13 @@
                 </article>
                 <article class="subscription-card" style="--card-accent:#f5a26f">
                     <div class="subscription-card__media">
-                        <img src="assets/images/MasterClass.svg" alt="شعار اشتراك MasterClass" loading="lazy" />
+                        <img src="assets/images/MasterClass.svg" alt="شعار اشتراك MasterClass" loading="lazy" data-i18n-attrs="alt:subscriptions.catalog.card6.alt" />
                     </div>
-                    <h3>MasterClass</h3>
-                    <p class="subscription-card__price"><span data-price-iqd="18000"><span data-price-amount>18,000</span> <span data-price-unit>د.ع</span></span> / 6 أشهر</p>
-                    <button class="subscription-card__toggle" type="button" aria-expanded="false" aria-controls="details-masterclass">تفاصيل</button>
+                    <h3 data-i18n-key="subscriptions.catalog.card6.title">MasterClass</h3>
+                    <p class="subscription-card__price" data-i18n-key="subscriptions.catalog.card6.price" data-i18n-html="true"><span data-price-iqd="18000"><span data-price-amount>18,000</span> <span data-price-unit>د.ع</span></span> / 6 أشهر</p>
+                    <button class="subscription-card__toggle" type="button" aria-expanded="false" aria-controls="details-masterclass" data-i18n-key="subscriptions.catalog.toggle">تفاصيل</button>
                     <div class="subscription-card__details" id="details-masterclass" hidden>
-                        <ul>
+                        <ul data-i18n-key="subscriptions.catalog.card6.details" data-i18n-html="true">
                             <li>نوع الاشتراك: MasterClass All-Access لمكتبة الدورات الكاملة.</li>
                             <li>المدة: 6 أشهر مع تحديثات الدورات الجديدة تلقائيًا.</li>
                             <li>المحتوى: أكثر من 180 دورة مصورة يقدمها خبراء عالميون.</li>
@@ -223,13 +249,13 @@
                 </article>
                 <article class="subscription-card" style="--card-accent:#5ae0b0">
                     <div class="subscription-card__media">
-                        <img src="assets/images/DOLENGO.jpg" alt="شعار اشتراك Duolingo Plus" loading="lazy" />
+                        <img src="assets/images/DOLENGO.jpg" alt="شعار اشتراك Duolingo Plus" loading="lazy" data-i18n-attrs="alt:subscriptions.catalog.card7.alt" />
                     </div>
-                    <h3>Duolingo Plus</h3>
-                    <p class="subscription-card__price"><span data-price-iqd="24300"><span data-price-amount>24,300</span> <span data-price-unit>د.ع</span></span> / 6 أشهر</p>
-                    <button class="subscription-card__toggle" type="button" aria-expanded="false" aria-controls="details-duolingo">تفاصيل</button>
+                    <h3 data-i18n-key="subscriptions.catalog.card7.title">Duolingo Plus</h3>
+                    <p class="subscription-card__price" data-i18n-key="subscriptions.catalog.card7.price" data-i18n-html="true"><span data-price-iqd="24300"><span data-price-amount>24,300</span> <span data-price-unit>د.ع</span></span> / 6 أشهر</p>
+                    <button class="subscription-card__toggle" type="button" aria-expanded="false" aria-controls="details-duolingo" data-i18n-key="subscriptions.catalog.toggle">تفاصيل</button>
                     <div class="subscription-card__details" id="details-duolingo" hidden>
-                        <ul>
+                        <ul data-i18n-key="subscriptions.catalog.card7.details" data-i18n-html="true">
                             <li>نوع الاشتراك: Duolingo Super بدون إعلانات.</li>
                             <li>المدة: 6 أشهر مع مزامنة تقدمك على كل الأجهزة.</li>
                             <li>الميزات: مراجعة ذكية، تحميل الدروس دون اتصال، واختبارات تقدم.</li>
@@ -239,13 +265,13 @@
                 </article>
                 <article class="subscription-card" style="--card-accent:#7dd3ff">
                     <div class="subscription-card__media">
-                        <img src="assets/images/Rosetta-Stone.svg" alt="شعار اشتراك Rosetta Stone" loading="lazy" />
+                        <img src="assets/images/Rosetta-Stone.svg" alt="شعار اشتراك Rosetta Stone" loading="lazy" data-i18n-attrs="alt:subscriptions.catalog.card8.alt" />
                     </div>
-                    <h3>Rosetta Stone</h3>
-                    <p class="subscription-card__price"><span data-price-iqd="22485"><span data-price-amount>22,485</span> <span data-price-unit>د.ع</span></span> / 6 أشهر</p>
-                    <button class="subscription-card__toggle" type="button" aria-expanded="false" aria-controls="details-rosetta">تفاصيل</button>
+                    <h3 data-i18n-key="subscriptions.catalog.card8.title">Rosetta Stone</h3>
+                    <p class="subscription-card__price" data-i18n-key="subscriptions.catalog.card8.price" data-i18n-html="true"><span data-price-iqd="22485"><span data-price-amount>22,485</span> <span data-price-unit>د.ع</span></span> / 6 أشهر</p>
+                    <button class="subscription-card__toggle" type="button" aria-expanded="false" aria-controls="details-rosetta" data-i18n-key="subscriptions.catalog.toggle">تفاصيل</button>
                     <div class="subscription-card__details" id="details-rosetta" hidden>
-                        <ul>
+                        <ul data-i18n-key="subscriptions.catalog.card8.details" data-i18n-html="true">
                             <li>نوع الاشتراك: Rosetta Stone Unlimited Languages لجميع اللغات.</li>
                             <li>المدة: 6 أشهر مع دروس مخصصة وفق هدفك.</li>
                             <li>الميزات: تدريب نطق مع التعرف على الصوت وإمكانية تحميل الدروس.</li>
@@ -255,13 +281,13 @@
                 </article>
                 <article class="subscription-card" style="--card-accent:#0056d2">
                     <div class="subscription-card__media">
-                        <img src="assets/images/Coursera-.png" alt="شعار اشتراك Coursera Plus" loading="lazy" />
+                        <img src="assets/images/Coursera-.png" alt="شعار اشتراك Coursera Plus" loading="lazy" data-i18n-attrs="alt:subscriptions.catalog.card9.alt" />
                     </div>
-                    <h3>Coursera Plus (سنة كاملة)</h3>
-                    <p class="subscription-card__price"><span data-price-iqd="125000"><span data-price-amount>125,000</span> <span data-price-unit>د.ع</span></span> / سنة</p>
-                    <button class="subscription-card__toggle" type="button" aria-expanded="false" aria-controls="details-coursera">تفاصيل</button>
+                    <h3 data-i18n-key="subscriptions.catalog.card9.title">Coursera Plus (سنة كاملة)</h3>
+                    <p class="subscription-card__price" data-i18n-key="subscriptions.catalog.card9.price" data-i18n-html="true"><span data-price-iqd="125000"><span data-price-amount>125,000</span> <span data-price-unit>د.ع</span></span> / سنة</p>
+                    <button class="subscription-card__toggle" type="button" aria-expanded="false" aria-controls="details-coursera" data-i18n-key="subscriptions.catalog.toggle">تفاصيل</button>
                     <div class="subscription-card__details" id="details-coursera" hidden>
-                        <ul>
+                        <ul data-i18n-key="subscriptions.catalog.card9.details" data-i18n-html="true">
                             <li>نوع الاشتراك: Coursera Plus بجميع الدورات والشهادات.</li>
                             <li>السعر الأصلي: <span data-price-iqd="346000"><span data-price-amount>346,000</span> <span data-price-unit>د.ع</span></span> قبل العرض.</li>
                             <li>المحتوى: أكثر من 7,000 دورة وProfessional Certificates من Google وMeta وIBM.</li>
@@ -271,13 +297,13 @@
                 </article>
                 <article class="subscription-card" style="--card-accent:#ff82c1">
                     <div class="subscription-card__media">
-                        <img src="assets/images/Microsoft%20365.png" alt="شعار اشتراك Microsoft 365" loading="lazy" />
+                        <img src="assets/images/Microsoft%20365.png" alt="شعار اشتراك Microsoft 365" loading="lazy" data-i18n-attrs="alt:subscriptions.catalog.card10.alt" />
                     </div>
-                    <h3>Microsoft 365</h3>
-                    <p class="subscription-card__price"><span data-price-iqd="40500"><span data-price-amount>40,500</span> <span data-price-unit>د.ع</span></span> / سنة</p>
-                    <button class="subscription-card__toggle" type="button" aria-expanded="false" aria-controls="details-microsoft">تفاصيل</button>
+                    <h3 data-i18n-key="subscriptions.catalog.card10.title">Microsoft 365</h3>
+                    <p class="subscription-card__price" data-i18n-key="subscriptions.catalog.card10.price" data-i18n-html="true"><span data-price-iqd="40500"><span data-price-amount>40,500</span> <span data-price-unit>د.ع</span></span> / سنة</p>
+                    <button class="subscription-card__toggle" type="button" aria-expanded="false" aria-controls="details-microsoft" data-i18n-key="subscriptions.catalog.toggle">تفاصيل</button>
                     <div class="subscription-card__details" id="details-microsoft" hidden>
-                        <ul>
+                        <ul data-i18n-key="subscriptions.catalog.card10.details" data-i18n-html="true">
                             <li>نوع الاشتراك: Microsoft 365 مع التطبيقات الكاملة للأعمال.</li>
                             <li>المدة: سنة كاملة مع تحديثات تلقائية.</li>
                             <li>التطبيقات: Word، Excel، PowerPoint، Outlook، Access، وPublisher.</li>
@@ -287,13 +313,13 @@
                 </article>
                 <article class="subscription-card" style="--card-accent:#0078d4">
                     <div class="subscription-card__media">
-                        <img src="assets/images/Windows11-Web.PNG" alt="شعار اشتراك Windows 11 Pro" loading="lazy" />
+                        <img src="assets/images/Windows11-Web.PNG" alt="شعار اشتراك Windows 11 Pro" loading="lazy" data-i18n-attrs="alt:subscriptions.catalog.card11.alt" />
                     </div>
-                    <h3>Windows 11 Pro</h3>
-                    <p class="subscription-card__price"><span data-price-iqd="40485"><span data-price-amount>40,485</span> <span data-price-unit>د.ع</span></span> / سنة</p>
-                    <button class="subscription-card__toggle" type="button" aria-expanded="false" aria-controls="details-windows">تفاصيل</button>
+                    <h3 data-i18n-key="subscriptions.catalog.card11.title">Windows 11 Pro</h3>
+                    <p class="subscription-card__price" data-i18n-key="subscriptions.catalog.card11.price" data-i18n-html="true"><span data-price-iqd="40485"><span data-price-amount>40,485</span> <span data-price-unit>د.ع</span></span> / سنة</p>
+                    <button class="subscription-card__toggle" type="button" aria-expanded="false" aria-controls="details-windows" data-i18n-key="subscriptions.catalog.toggle">تفاصيل</button>
                     <div class="subscription-card__details" id="details-windows" hidden>
-                        <ul>
+                        <ul data-i18n-key="subscriptions.catalog.card11.details" data-i18n-html="true">
                             <li>نوع الاشتراك: ترخيص Windows 11 Pro رقمي أصلي.</li>
                             <li>المدة: تفعيل دائم مع ضمان إعادة التفعيل لمدة 12 شهرًا.</li>
                             <li>التسليم: مفتاح رقمي يتم إرساله فور الدفع مع خطوات التثبيت.</li>
@@ -303,13 +329,13 @@
                 </article>
                 <article class="subscription-card" style="--card-accent:#ffba6f">
                     <div class="subscription-card__media">
-                        <img src="assets/images/Adobe-Creative-Cloud.svg" alt="شعار اشتراك Adobe Creative Cloud" loading="lazy" />
+                        <img src="assets/images/Adobe-Creative-Cloud.svg" alt="شعار اشتراك Adobe Creative Cloud" loading="lazy" data-i18n-attrs="alt:subscriptions.catalog.card12.alt" />
                     </div>
-                    <h3>Adobe Creative Cloud</h3>
-                    <p class="subscription-card__price"><span data-price-iqd="374985"><span data-price-amount>374,985</span> <span data-price-unit>د.ع</span></span> / سنة</p>
-                    <button class="subscription-card__toggle" type="button" aria-expanded="false" aria-controls="details-adobe">تفاصيل</button>
+                    <h3 data-i18n-key="subscriptions.catalog.card12.title">Adobe Creative Cloud</h3>
+                    <p class="subscription-card__price" data-i18n-key="subscriptions.catalog.card12.price" data-i18n-html="true"><span data-price-iqd="374985"><span data-price-amount>374,985</span> <span data-price-unit>د.ع</span></span> / سنة</p>
+                    <button class="subscription-card__toggle" type="button" aria-expanded="false" aria-controls="details-adobe" data-i18n-key="subscriptions.catalog.toggle">تفاصيل</button>
                     <div class="subscription-card__details" id="details-adobe" hidden>
-                        <ul>
+                        <ul data-i18n-key="subscriptions.catalog.card12.details" data-i18n-html="true">
                             <li>نوع الاشتراك: Adobe Creative Cloud All Apps.</li>
                             <li>المدة: سنة كاملة تشمل كل التحديثات الرئيسية.</li>
                             <li>التطبيقات: Photoshop، Illustrator، Premiere Pro، After Effects، XD والمزيد.</li>
@@ -319,13 +345,13 @@
                 </article>
                 <article class="subscription-card" style="--card-accent:#7f9bff">
                     <div class="subscription-card__media">
-                        <img src="assets/images/Canva%20Pro.PNG" alt="شعار اشتراك Canva Pro" loading="lazy" />
+                        <img src="assets/images/Canva%20Pro.PNG" alt="شعار اشتراك Canva Pro" loading="lazy" data-i18n-attrs="alt:subscriptions.catalog.card13.alt" />
                     </div>
-                    <h3>Canva Pro</h3>
-                    <p class="subscription-card__price"><span data-price-iqd="26305"><span data-price-amount>26,305</span> <span data-price-unit>د.ع</span></span> / سنة</p>
-                    <button class="subscription-card__toggle" type="button" aria-expanded="false" aria-controls="details-canva">تفاصيل</button>
+                    <h3 data-i18n-key="subscriptions.catalog.card13.title">Canva Pro</h3>
+                    <p class="subscription-card__price" data-i18n-key="subscriptions.catalog.card13.price" data-i18n-html="true"><span data-price-iqd="26305"><span data-price-amount>26,305</span> <span data-price-unit>د.ع</span></span> / سنة</p>
+                    <button class="subscription-card__toggle" type="button" aria-expanded="false" aria-controls="details-canva" data-i18n-key="subscriptions.catalog.toggle">تفاصيل</button>
                     <div class="subscription-card__details" id="details-canva" hidden>
-                        <ul>
+                        <ul data-i18n-key="subscriptions.catalog.card13.details" data-i18n-html="true">
                             <li>نوع الاشتراك: Canva Pro بمقعد واحد للتصميم الاحترافي.</li>
                             <li>المدة: سنة كاملة مع إضافات متميزة.</li>
                             <li>الميزات: قوالب غير محدودة، إزالة الخلفية، ومكتبة صور مدفوعة.</li>
@@ -339,49 +365,49 @@
         <section class="section">
             <div class="container info-grid">
                 <article class="info-card">
-                    <h3>تفعيل فوري</h3>
-                    <p>نرسل لك تفاصيل التفعيل مباشرة بعد الدفع، مع فيديو توضيحي قصير وخيارات دعم تتيح المتابعة خطوة بخطوة.</p>
+                    <h3 data-i18n-key="subscriptions.infoGrid.card1.title">تفعيل فوري</h3>
+                    <p data-i18n-key="subscriptions.infoGrid.card1.body">نرسل لك تفاصيل التفعيل مباشرة بعد الدفع، مع فيديو توضيحي قصير وخيارات دعم تتيح المتابعة خطوة بخطوة.</p>
                 </article>
                 <article class="info-card">
-                    <h3>ضمان مستمر</h3>
-                    <p>في حال وجود أي مشكلة في الخدمة، يتم التعويض بحساب جديد أو إرجاع المبلغ خلال مدة الاشتراك.</p>
+                    <h3 data-i18n-key="subscriptions.infoGrid.card2.title">ضمان مستمر</h3>
+                    <p data-i18n-key="subscriptions.infoGrid.card2.body">في حال وجود أي مشكلة في الخدمة، يتم التعويض بحساب جديد أو إرجاع المبلغ خلال مدة الاشتراك.</p>
                 </article>
                 <article class="info-card">
-                    <h3>قابل للتخصيص</h3>
-                    <p>اختر الفترة التي تناسبك: أسبوعي، شهري، أو سنوي، مع خصومات خاصة للطلبات الجماعية والشركات.</p>
+                    <h3 data-i18n-key="subscriptions.infoGrid.card3.title">قابل للتخصيص</h3>
+                    <p data-i18n-key="subscriptions.infoGrid.card3.body">اختر الفترة التي تناسبك: أسبوعي، شهري، أو سنوي، مع خصومات خاصة للطلبات الجماعية والشركات.</p>
                 </article>
             </div>
         </section>
 
         <section class="section payment-section" id="payment">
             <div class="container section__header">
-                <h2>طرق الدفع للاشتراكات</h2>
-                <p>البيانات التالية توضيحية فقط، وسيتم تحديثها بعد تفعيل القنوات الرسمية.</p>
+                <h2 data-i18n-key="subscriptions.payment.title">طرق الدفع للاشتراكات</h2>
+                <p data-i18n-key="subscriptions.payment.description">البيانات التالية توضيحية فقط، وسيتم تحديثها بعد تفعيل القنوات الرسمية.</p>
             </div>
             <div class="container payment-grid">
                 <article class="payment-card">
                     <div class="payment-card__header">
                         <div class="payment-card__logo">
-                            <img src="assets/images/zaincash-logo.svg" alt="شعار محفظة ZainCash" loading="lazy" />
-                            <h3>ZainCash</h3>
+                            <img src="assets/images/zaincash-logo.svg" alt="شعار محفظة ZainCash" loading="lazy" data-i18n-attrs="alt:subscriptions.payment.cards.zaincash.alt" />
+                            <h3 data-i18n-key="subscriptions.payment.cards.zaincash.title">ZainCash</h3>
                         </div>
                         <div class="payment-card__qr">
-                            <img src="assets/images/qr-placeholder-zaincash.svg" alt="رمز QR افتراضي لتحويل ZainCash" loading="lazy" />
+                            <img src="assets/images/qr-placeholder-zaincash.svg" alt="رمز QR افتراضي لتحويل ZainCash" loading="lazy" data-i18n-attrs="alt:subscriptions.payment.cards.zaincash.qrAlt" />
                         </div>
                     </div>
                     <div class="payment-card__body">
-                        <div class="payment-card__details">
+                        <div class="payment-card__details" data-i18n-key="subscriptions.payment.cards.zaincash.details" data-i18n-html="true">
                             <span>اسم المحفظة: PLUS STORE</span>
                             <span>رقم المحفظة: 0770 000 0000</span>
                             <span>الملاحظة: اسم الاشتراك + مدة الاشتراك</span>
                         </div>
-                        <div class="payment-card__meta">
+                        <div class="payment-card__meta" data-i18n-key="subscriptions.payment.cards.zaincash.meta" data-i18n-html="true">
                             <span>رسوم التحويل: 0%</span>
                             <span>التحقق: فوري</span>
                         </div>
                         <div class="payment-card__actions">
-                            <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener">إرسال وصل الدفع</a>
-                            <a class="cta cta--ghost" href="purchase.html#steps">تعليمات الدفع</a>
+                            <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener" data-i18n-key="subscriptions.payment.cards.zaincash.ctaReceipt">إرسال وصل الدفع</a>
+                            <a class="cta cta--ghost" href="purchase.html#steps" data-i18n-key="subscriptions.payment.cards.zaincash.ctaInstructions">تعليمات الدفع</a>
                         </div>
                     </div>
                 </article>
@@ -389,26 +415,26 @@
                 <article class="payment-card">
                     <div class="payment-card__header">
                         <div class="payment-card__logo">
-                            <img src="assets/images/qicard-logo.svg" alt="شعار بطاقة QiCard" loading="lazy" />
-                            <h3>QiCard</h3>
+                            <img src="assets/images/qicard-logo.svg" alt="شعار بطاقة QiCard" loading="lazy" data-i18n-attrs="alt:subscriptions.payment.cards.qicard.alt" />
+                            <h3 data-i18n-key="subscriptions.payment.cards.qicard.title">QiCard</h3>
                         </div>
                         <div class="payment-card__qr">
-                            <img src="assets/images/qr-placeholder-qicard.svg" alt="رمز QR افتراضي لتحويل QiCard" loading="lazy" />
+                            <img src="assets/images/qr-placeholder-qicard.svg" alt="رمز QR افتراضي لتحويل QiCard" loading="lazy" data-i18n-attrs="alt:subscriptions.payment.cards.qicard.qrAlt" />
                         </div>
                     </div>
                     <div class="payment-card__body">
-                        <div class="payment-card__details">
+                        <div class="payment-card__details" data-i18n-key="subscriptions.payment.cards.qicard.details" data-i18n-html="true">
                             <span>اسم الحساب: PLUS STORE</span>
                             <span>رقم البطاقة: 5890 0000 0000 0000</span>
                             <span>تعليمات: أرسل صورة الإيصال عبر واتساب</span>
                         </div>
-                        <div class="payment-card__meta">
+                        <div class="payment-card__meta" data-i18n-key="subscriptions.payment.cards.qicard.meta" data-i18n-html="true">
                             <span>ساعات العمل: 10 ص - 1 ص</span>
                             <span>المعالجة: خلال 5 دقائق</span>
                         </div>
                         <div class="payment-card__actions">
-                            <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener">تأكيد التحويل</a>
-                            <a class="cta cta--ghost" href="purchase.html#faq">الأسئلة الشائعة</a>
+                            <a class="cta" href="https://wa.me/9647700000000" target="_blank" rel="noopener" data-i18n-key="subscriptions.payment.cards.qicard.ctaConfirm">تأكيد التحويل</a>
+                            <a class="cta cta--ghost" href="purchase.html#faq" data-i18n-key="subscriptions.payment.cards.qicard.ctaFaq">الأسئلة الشائعة</a>
                         </div>
                     </div>
                 </article>
@@ -420,26 +446,26 @@
         <div class="container footer__inner">
             <div>
                 <h4>PLUS STORE</h4>
-                <p>نبني الثقة مع كل عملية شراء ونوفّر أفضل التجارب الرقمية.</p>
+                <p data-i18n-key="footer.about">نبني الثقة مع كل عملية شراء ونوفّر أفضل التجارب الرقمية.</p>
             </div>
             <div>
-                <h5>تواصل معنا</h5>
+                <h5 data-i18n-key="footer.contact.title">تواصل معنا</h5>
                 <ul>
                     <li><a href="mailto:support@plusstore.iq">support@plusstore.iq</a></li>
                     <li><a href="tel:+9647700000000">+964 770 000 0000</a></li>
-                    <li><a href="https://t.me/plusstore" target="_blank" rel="noopener">تليجرام</a></li>
+                    <li><a href="https://t.me/plusstore" target="_blank" rel="noopener" data-i18n-key="footer.contact.telegram">تليجرام</a></li>
                 </ul>
             </div>
             <div>
-                <h5>روابط سريعة</h5>
+                <h5 data-i18n-key="footer.links.title">روابط سريعة</h5>
                 <ul>
-                    <li><a href="subscriptions.html">الاشتراكات</a></li>
-                    <li><a href="accounts.html">الحسابات</a></li>
-                    <li><a href="offers.html">العروض</a></li>
+                    <li><a href="subscriptions.html" data-i18n-key="footer.links.subscriptions">الاشتراكات</a></li>
+                    <li><a href="accounts.html" data-i18n-key="footer.links.accounts">الحسابات</a></li>
+                    <li><a href="offers.html" data-i18n-key="footer.links.offers">العروض</a></li>
                 </ul>
             </div>
         </div>
-        <p class="footer__copy">© 2025 PLUS STORE. جميع الحقوق محفوظة.</p>
+        <p class="footer__copy" data-i18n-key="footer.copy">© 2025 PLUS STORE. جميع الحقوق محفوظة.</p>
     </footer>
 
     <script type="module" src="assets/js/main.js"></script>
