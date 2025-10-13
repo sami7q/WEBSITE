@@ -44,9 +44,8 @@ const updateWhatsappLinks = () => {
     const targetUrl = getWhatsappUrl();
 
     document.querySelectorAll(WHATSAPP_LINK_SELECTOR).forEach((anchor) => {
-        if (anchor.getAttribute("href") !== targetUrl) {
-            anchor.setAttribute("href", targetUrl);
-        }
+        anchor.setAttribute("href", targetUrl);
+        anchor.dataset.whatsappLink = targetUrl;
     });
 };
 
@@ -55,4 +54,21 @@ export function initWhatsappRouting() {
 
     document.addEventListener("pl:language-change", updateWhatsappLinks);
     document.addEventListener("pl:currency-change", updateWhatsappLinks);
+
+    document.addEventListener(
+        "click",
+        (event) => {
+            const anchor = event.target.closest(WHATSAPP_LINK_SELECTOR);
+            if (!anchor) {
+                return;
+            }
+
+            const targetUrl = getWhatsappUrl();
+            if (anchor.getAttribute("href") !== targetUrl) {
+                anchor.setAttribute("href", targetUrl);
+                anchor.dataset.whatsappLink = targetUrl;
+            }
+        },
+        true
+    );
 }
