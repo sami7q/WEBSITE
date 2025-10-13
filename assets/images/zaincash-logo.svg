@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="title desc">
+  <title id="title">ZainCash Placeholder Logo</title>
+  <desc id="desc">A stylised placeholder logo for ZainCash in blue and orange gradients.</desc>
+  <defs>
+    <linearGradient id="g-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00a3e0" />
+      <stop offset="100%" stop-color="#004c9e" />
+    </linearGradient>
+    <linearGradient id="g-orange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffb347" />
+      <stop offset="100%" stop-color="#ff6b3d" />
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="28" fill="#0d1016" />
+  <rect x="12" y="12" width="96" height="96" rx="24" fill="#181d29" />
+  <path d="M36 52c0-13 11-24 24-24s24 11 24 24-11 24-24 24c-4 0-8.4-1.2-12-3.3l-10.7 10.7a4 4 0 01-5.6-5.6l10.7-10.7A23.9 23.9 0 0136 52z" fill="url(#g-blue)" />
+  <path d="M60 36a16 16 0 0111.3 27.3l-22.6 22.6a4 4 0 005.6 5.6l22.6-22.6A24 24 0 1050.8 41.4l-8.5 8.5a4 4 0 005.6 5.6l8.5-8.5A15.9 15.9 0 0160 36z" fill="url(#g-orange)" />
+</svg>

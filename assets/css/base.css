@@ -1,0 +1,258 @@
+/* =====================================================
+   Base Variables & Global Setup
+   ===================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700;800&display=swap");
+
+:root {
+    color-scheme: dark;
+    --bg: #0d1016;
+    --surface: rgba(255, 255, 255, 0.05);
+    --surface-strong: rgba(79, 128, 255, 0.15);
+    --accent: #4f80ff;
+    --accent-soft: rgba(79, 128, 255, 0.22);
+    --accent-strong: #335bd6;
+    --text-main: #f3f6ff;
+    --text-muted: #a9b4d4;
+    --text-subtle: rgba(243, 246, 255, 0.6);
+    --border: rgba(255, 255, 255, 0.08);
+    --shadow: 0 24px 40px -24px rgba(0, 0, 0, 0.7);
+    --radius-xl: 28px;
+    --radius-lg: 22px;
+    font-family: "Tajawal", "Segoe UI", Tahoma, sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: radial-gradient(circle at top right, rgba(79, 128, 255, 0.2), transparent 45%),
+        radial-gradient(circle at bottom left, rgba(94, 202, 255, 0.12), transparent 55%),
+        var(--bg);
+    color: var(--text-main);
+    font-family: inherit;
+    line-height: 1.7;
+    display: flex;
+    flex-direction: column;
+}
+
+body.is-loading {
+    overflow: hidden;
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ---------- Global Page Loader ---------- */
+.page-loader {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at 18% 12%, rgba(94, 202, 255, 0.26), transparent 58%),
+        radial-gradient(circle at 82% 18%, rgba(79, 128, 255, 0.22), transparent 62%),
+        rgba(7, 9, 13, 0.94);
+    display: grid;
+    place-items: center;
+    z-index: 9999;
+    transition: opacity 0.45s ease, visibility 0.45s ease;
+}
+
+.page-loader__inner {
+    display: grid;
+    gap: 1.6rem;
+    text-align: center;
+    justify-items: center;
+    padding: 2.6rem 3.2rem;
+    border-radius: 32px;
+    background: rgba(13, 16, 22, 0.72);
+    border: 1px solid rgba(94, 202, 255, 0.28);
+    box-shadow: 0 32px 70px -34px rgba(79, 128, 255, 0.85);
+    backdrop-filter: blur(20px);
+}
+
+.page-loader__emblem {
+    position: relative;
+    width: 112px;
+    height: 112px;
+    border-radius: 28px;
+    background: linear-gradient(135deg, rgba(94, 202, 255, 0.55), rgba(79, 128, 255, 0.32));
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    box-shadow: 0 28px 48px -32px rgba(94, 202, 255, 0.65);
+}
+
+.page-loader__emblem::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: radial-gradient(circle at top, rgba(255, 255, 255, 0.32), transparent 70%);
+    opacity: 0.85;
+}
+
+.page-loader__emblem::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.25), transparent 60%);
+    filter: blur(6px);
+    animation: loaderPulse 2.4s ease-in-out infinite;
+}
+
+.page-loader__initials {
+    position: relative;
+    font-weight: 800;
+    font-size: 2.4rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.4));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    z-index: 1;
+}
+
+.page-loader__orbit {
+    position: absolute;
+    inset: 10px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: rgba(255, 255, 255, 0.75);
+    border-right-color: rgba(94, 202, 255, 0.65);
+    animation: loaderOrbit 1.5s linear infinite;
+    z-index: 1;
+}
+
+.page-loader__orbit::after {
+    content: "";
+    position: absolute;
+    top: -6px;
+    inset-inline-end: 12px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 14px rgba(255, 255, 255, 0.8);
+}
+
+.page-loader__orbit--delay {
+    inset: 18px;
+    border-top-color: rgba(255, 255, 255, 0.45);
+    border-right-color: rgba(79, 128, 255, 0.65);
+    animation-duration: 1.9s;
+    animation-delay: -0.6s;
+}
+
+.page-loader__logo {
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: rgba(243, 246, 255, 0.9);
+}
+
+.page-loader__progress {
+    position: relative;
+    width: 180px;
+    height: 6px;
+    border-radius: 999px;
+    background: rgba(94, 202, 255, 0.16);
+    overflow: hidden;
+    border: 1px solid rgba(94, 202, 255, 0.28);
+}
+
+.page-loader__bar {
+    position: absolute;
+    inset: 0;
+    width: 45%;
+    background: linear-gradient(90deg, rgba(94, 202, 255, 0.2), rgba(94, 202, 255, 0.8), rgba(94, 202, 255, 0.2));
+    border-radius: inherit;
+    animation: loaderSweep 1s ease-in-out infinite;
+}
+
+.page-loader__text {
+    color: rgba(243, 246, 255, 0.8);
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+}
+
+/* ---------- Loader Animations ---------- */
+@keyframes loaderOrbit {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loaderPulse {
+    0%,
+    100% {
+        opacity: 0.7;
+        transform: scale(0.96);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes loaderSweep {
+    0% {
+        transform: translateX(-60%);
+    }
+
+    50% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(110%);
+    }
+}
+
+/* ---------- Global Links, Lists & Helpers ---------- */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.logo:hover {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.container {
+    width: min(1100px, 92vw);
+    margin-inline: auto;
+}

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" role="img" aria-labelledby="title desc">
+  <title id="title">PlayStation 5 Access Card</title>
+  <desc id="desc">أيقونة مبسطة ترمز إلى جهاز تحكم بلايستيشن 5</desc>
+  <defs>
+    <linearGradient id="psGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7aa5ff" />
+      <stop offset="100%" stop-color="#4f80ff" />
+    </linearGradient>
+  </defs>
+  <rect x="16" y="18" width="208" height="144" rx="28" fill="url(#psGradient)" />
+  <rect x="38" y="44" width="164" height="92" rx="26" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.35)" stroke-width="2.5" />
+  <g fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M88 120c-12 0-26-12-26-26s14-26 26-26" />
+    <path d="M152 68c12 0 26 12 26 26s-14 26-26 26" />
+    <path d="M120 76v56" stroke-width="6" />
+  </g>
+  <g fill="rgba(255,255,255,0.92)">
+    <circle cx="92" cy="92" r="6" />
+    <rect x="108" y="88" width="24" height="8" rx="4" />
+    <circle cx="148" cy="92" r="6" />
+  </g>
+  <text x="50%" y="52" text-anchor="middle" font-family="'Segoe UI', Cairo, sans-serif" font-size="22" fill="rgba(255,255,255,0.95)" font-weight="700">PlayStation 5</text>
+</svg>

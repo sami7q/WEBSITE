@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="none">
+  <defs>
+    <linearGradient id="mcGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff4f64" />
+      <stop offset="1" stop-color="#ff8a50" />
+    </linearGradient>
+  </defs>
+  <rect width="160" height="160" rx="36" fill="url(#mcGrad)" />
+  <path d="M52 112V48h18l10 32 10-32h18v64h-12V70l-12 42h-8L64 70v42H52Z" fill="#fff"/>
+</svg>

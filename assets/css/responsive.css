@@ -1,0 +1,406 @@
+/* =====================================================
+   Responsive Adjustments
+   ===================================================== */
+
+@media (max-width: 960px) {
+    .header__inner {
+        gap: 0.6rem;
+        display: grid;
+        grid-template-columns: auto 1fr auto auto auto;
+        align-items: center;
+    }
+
+    .logo {
+        order: 1;
+    }
+
+    .menu-toggle {
+        display: flex;
+        order: 2;
+    }
+
+    /* زر العملات */
+    .currency-widget {
+        order: 3;
+        width: auto;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .currency-widget__toggle {
+        width: auto;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        border-radius: 999px;
+        text-shadow: none;
+    }
+
+    .currency-widget__panel {
+        position: absolute;
+        top: calc(100% + 0.5rem);
+        inset-inline-end: 0;
+        width: auto;
+        min-width: 180px;
+        margin-top: 0;
+        border-radius: 18px;
+        box-shadow: 0 22px 48px -26px rgba(0, 0, 0, 0.72);
+        padding: 0.85rem 0.9rem 0.9rem;
+    }
+
+    .currency-widget__option {
+        font-size: 0.85rem;
+        padding: 0.6rem 0.75rem;
+    }
+
+    /* زر الطلب الآن */
+    .header__cta {
+        display: block;
+        order: 4;
+    }
+
+    .header__cta .cta {
+        padding: 0.5rem 0.85rem;
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+
+    /* زر البحث - في أقصى اليسار */
+    .site-nav__search {
+        order: 5;
+        width: auto;
+        margin: 0;
+        position: relative;
+    }
+
+    .site-nav__search .search__input {
+        width: 100px;
+        padding: 0.5rem 0.6rem;
+        font-size: 0.75rem;
+    }
+
+    .site-nav__search .search__clear {
+        inset-inline-start: 0.4rem;
+        width: 16px;
+        height: 16px;
+    }
+
+    .search__suggestions {
+        max-height: 260px;
+    }
+
+    .site-nav {
+        order: 6;
+        flex: none;
+        position: fixed;
+        inset: 80px 0 0;
+        background: rgba(6, 8, 12, 0.97);
+        backdrop-filter: blur(18px);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 26px 64px -32px rgba(0, 0, 0, 0.78);
+        z-index: 120;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease;
+        padding: 1.5rem 0 2rem;
+    }
+
+    .site-nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+        padding-inline: 1.5rem;
+        width: 100%;
+    }
+
+    .site-nav li {
+        width: 100%;
+    }
+
+    .site-nav a {
+        width: 100%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.75rem;
+        padding: 0.95rem 1.1rem;
+        border-radius: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.08);
+        color: rgba(255, 255, 255, 0.94);
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+        transition: border-color 0.25s ease, background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+    }
+
+    .site-nav a:hover,
+    .site-nav a.is-active {
+        background: rgba(94, 202, 255, 0.22);
+        border-color: rgba(94, 202, 255, 0.38);
+        color: #ffffff;
+        transform: translateY(-1px);
+    }
+
+    body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: rgba(4, 6, 12, 0.85);
+        backdrop-filter: blur(10px);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        z-index: 90;
+    }
+
+    body.menu-open {
+        overflow: hidden;
+    }
+
+    body.menu-open::after {
+        opacity: 1;
+    }
+
+    .site-nav[data-open="true"] {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .hero__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .hero__stats {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    }
+
+    .hero__rating {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.7rem;
+    }
+
+    .hero__rating-text {
+        align-items: flex-start;
+    }
+
+    .section__feature {
+        grid-template-columns: 1fr;
+    }
+
+    .page-hero__inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .page-hero__image {
+        justify-content: center;
+    }
+
+    .flash-banner,
+    .guarantee {
+        text-align: center;
+        justify-items: center;
+    }
+
+    .guarantee__cta {
+        justify-items: center;
+    }
+
+    .subscription-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .bestseller-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .payment-card__header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .payment-card__qr {
+        width: 140px;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 0.98rem;
+    }
+
+    .announcement__inner {
+        flex-direction: column;
+        gap: 0.4rem;
+        text-align: center;
+    }
+
+    .hero {
+        padding: 3rem 0 2.5rem;
+    }
+
+    .hero__inner h1 {
+        font-size: clamp(1.8rem, 7vw, 2.4rem);
+    }
+
+    .hero__actions {
+        width: 100%;
+    }
+
+    .hero__stats {
+        grid-template-columns: 1fr;
+    }
+
+    .hero__stats article {
+        aspect-ratio: auto;
+        padding: 1.4rem 1.2rem;
+    }
+
+    .hero__rating {
+        width: 100%;
+        align-items: center;
+        padding: 0.7rem 1rem;
+        gap: 0.8rem;
+    }
+
+    .hero__rating-text {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero__rating-text strong {
+        font-size: 0.95rem;
+    }
+
+    .hero__rating-text span {
+        font-size: 0.78rem;
+    }
+
+    .hero__stats article::after {
+        inset: 12px;
+    }
+
+    .flash-timer {
+        font-size: 1.2rem;
+    }
+
+    .steps-illustration span {
+        width: 60px;
+        height: 60px;
+    }
+
+    .step-pointer {
+        margin-top: 2rem;
+    }
+
+    .step-pointer__link {
+        flex-direction: column;
+        gap: 0.6rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    .step-pointer__icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .section {
+        padding: 2.6rem 0;
+    }
+
+    .section__header {
+        margin-bottom: 1.6rem;
+    }
+
+    .section__header h2 {
+        font-size: clamp(1.5rem, 6vw, 1.9rem);
+    }
+
+    .section__header p {
+        font-size: 0.9rem;
+    }
+
+    .cta {
+        padding: 0.75rem 1.6rem;
+        font-size: 0.95rem;
+    }
+
+    .subscription-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bestseller-grid,
+    .offer-grid,
+    .payment-grid,
+    .product-grid,
+    .info-grid,
+    .safety-grid,
+    .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 1.1rem;
+    }
+
+    .payment-card__header {
+        align-items: stretch;
+    }
+
+    .payment-card__logo {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .payment-card__actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .payment-card__qr {
+        width: 120px;
+    }
+
+    .bestseller-card {
+        padding: 1.35rem 1.1rem;
+    }
+
+    .subscription-card,
+    .product-card,
+    .offer-card,
+    .payment-card,
+    .info-card,
+    .step-card,
+    .safety-card,
+    .badge-card {
+        padding: 1.35rem 1.1rem;
+        border-radius: 20px;
+        gap: 0.9rem;
+    }
+
+    .subscription-card h3,
+    .bestseller-card header h3,
+    .product-card h3,
+    .offer-card header h3,
+    .safety-card header h3,
+    .step-card h3,
+    .info-card h3 {
+        font-size: 1.05rem;
+    }
+
+    .subscription-card__price,
+    .price,
+    .price--discount {
+        font-size: 1rem;
+    }
+
+    .hero__stats h3 {
+        font-size: 1.8rem;
+    }
+
+    .hero__stats p {
+        font-size: 0.85rem;
+    }
+}
